@@ -4,9 +4,9 @@ this is for our files in this project
 
 
 Group members: 
-    * Zakariya 
-    * Thomas
-    * Louise
+* Zakariya 
+* Thomas
+* Louise
 
 project discription 
 in this project we will create a singel page application with poem of our choosing where we will try to animate the text. our animations goals is to emplefiy the text message.
