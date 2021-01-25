@@ -7,9 +7,10 @@ Group members:
     * Zakariya 
     * Thomas
     * Louise
+    * Emil
 
 project discription:       
-    in this project we will create a singel page application with poem of our choosing where we will try to animate the text. our animations goals is to emplefiy the text message.
+      In this project we will create a single page application with a poem of our choosing where we will try to animate the text. Our animations goals is to amplify the text message.
 
-seperation of conserns:   
-     our files will be seperated into diffrent folders to make it easer to handel diffrent asspect of the solution. we have a folder for images, styles, and js. the diffirent part of the styling files will have the naming scheme __nameOfYourConcern.scss
+seperation of concerns:   
+     Our files will be seperated into diffrent folders to make it easier to handle different aspects of the solution. We have a folder for images, styles, and js. the different part of the styling files will have the naming scheme __nameOfYourConcern.scss
