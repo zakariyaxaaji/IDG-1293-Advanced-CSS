@@ -4,4 +4,5 @@ this is for our files in this project
 
 
 Group members: 
-    1. Zakariya 
+ * Zakariya
+ * Thomas
