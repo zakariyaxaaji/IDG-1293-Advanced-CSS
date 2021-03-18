@@ -9,7 +9,6 @@ continueButton.addEventListener('click', (e) => {
     if (pageNumber <= 6) {
         start();
     }
-
     if (pageNumber === 6) {
         continueButton.innerHTML = "Reset";
     } else if (pageNumber > 6) {
