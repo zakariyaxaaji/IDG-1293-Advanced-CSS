@@ -1,13 +1,16 @@
-let pageNumber = 0;
-
 const continueButton = document.getElementById("continue-button");
 const poemText = document.getElementById("poem-text");
 
+let pageNumber = 0;
+
+resetPage();
+
 continueButton.addEventListener('click', (e) => {
-    document.getElementById("poem-text").innerHTML = ``;
     pageNumber++;
+    document.getElementById("poem-text").innerHTML = ``;
+
     if (pageNumber <= 6) {
-        start();
+        updatePage();
     }
     if (pageNumber === 6) {
         continueButton.innerHTML = "Reset";
@@ -16,7 +19,8 @@ continueButton.addEventListener('click', (e) => {
     }
 });
 
-function start() {
+function updatePage() {
+    document.body.className = `page-${pageNumber}`;
     poem["poem-" + pageNumber].forEach(line => {
         const paragraph = document.createElement("P");
         paragraph.innerHTML = line;
@@ -26,14 +30,14 @@ function start() {
 
 function resetPage() {
     pageNumber = 0;
-    continueButton.innerHTML = "Continue";
     const heading = document.createElement("H1");
     heading.innerHTML = "Favourite colour";
+    poemText.appendChild(heading);
     const paragraph = document.createElement("P");
     paragraph.innerHTML = "by Joni Mitchell";
-    poemText.appendChild(heading);
     poemText.appendChild(paragraph);
-
+    continueButton.innerHTML = "Continue";
+    document.body.className = `page-0`;
 }
 
 
