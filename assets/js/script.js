@@ -1,19 +1,40 @@
 let pageNumber = 0;
 
-function start() {
-    document.getElementById("poem-text").innerHTML = ``
-    console.log("Working");
-    console.log(poem);
-    console.log(poem["poem-" + pageNumber]);
+const continueButton = document.getElementById("continue-button");
+const poemText = document.getElementById("poem-text");
+
+continueButton.addEventListener('click', (e) => {
+    document.getElementById("poem-text").innerHTML = ``;
     pageNumber++;
+    if (pageNumber <= 6) {
+        start();
+    }
+
+    if (pageNumber === 6) {
+        continueButton.innerHTML = "Reset";
+    } else if (pageNumber > 6) {
+        resetPage();
+    }
+});
+
+function start() {
     poem["poem-" + pageNumber].forEach(line => {
         const paragraph = document.createElement("P");
         paragraph.innerHTML = line;
-        document.getElementById("poem-text").appendChild(paragraph);
+        poemText.appendChild(paragraph);
     });
-    if (pageNumber === 6) {
-        document.getElementById("continue-button").style = "display: none"
-    }
+}
+
+function resetPage() {
+    pageNumber = 0;
+    continueButton.innerHTML = "Continue";
+    const heading = document.createElement("H1");
+    heading.innerHTML = "Favourite colour";
+    const paragraph = document.createElement("P");
+    paragraph.innerHTML = "by Joni Mitchell";
+    poemText.appendChild(heading);
+    poemText.appendChild(paragraph);
+
 }
 
 
