@@ -1,15 +1,8 @@
 body {
-    background-image: linear-gradient(
-        to right,
-        rgba(255, 25, 58, 1) 0%,
-        rgba(255, 191, 24, 1) 25%,
-        rgba(255, 62, 228, 1) 50%,
-        rgba(136, 0, 255, 1) 75%,
-        rgba(0, 249, 255, 1) 100%
-    );
-    background-size: 2400%;
-    background-position: right;
-    transition: all 15s;
+    background: linear-gradient(221deg, $color-blue 0%, $color-green 25%, $color-orange 50%, $color-yellow 75%, $color-lightblue 100%);
+    background-size: 2000%;
+    background-position: 100% ;
+    transition: all 3s;
 }
 .container {
     height: 100vh;

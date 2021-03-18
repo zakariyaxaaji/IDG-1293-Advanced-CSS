@@ -2,11 +2,13 @@ const continueButton = document.getElementById("continue-button");
 const poemText = document.getElementById("poem-text");
 
 let pageNumber = 0;
+let gradPos = 100;
 
 resetPage();
 
 continueButton.addEventListener('click', (e) => {
     pageNumber++;
+    gradPos -= 25;
     document.getElementById("poem-text").innerHTML = ``;
 
     if (pageNumber <= 6) {
@@ -26,10 +28,13 @@ function updatePage() {
         paragraph.innerHTML = line;
         poemText.appendChild(paragraph);
     });
+    document.body.style.backgroundPosition = gradPos + "%";
+    console.log(gradPos)
 }
 
 function resetPage() {
     pageNumber = 0;
+    gradPos = 100;
     const heading = document.createElement("H1");
     heading.innerHTML = "Favourite colour";
     poemText.appendChild(heading);
