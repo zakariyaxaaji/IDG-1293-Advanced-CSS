@@ -8,7 +8,10 @@ resetPage();
 
 continueButton.addEventListener('click', (e) => {
     pageNumber++;
-    gradPos -= 25;
+    if (pageNumber != 5) {
+        gradPos -= 20;
+    }
+
     document.getElementById("poem-text").innerHTML = ``;
 
     if (pageNumber <= 6) {
@@ -35,6 +38,7 @@ function updatePage() {
 function resetPage() {
     pageNumber = 0;
     gradPos = 100;
+    document.body.style.backgroundPosition = gradPos + "%";
     const heading = document.createElement("H1");
     heading.innerHTML = "Favourite colour";
     poemText.appendChild(heading);
