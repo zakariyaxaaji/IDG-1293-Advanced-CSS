@@ -8,18 +8,18 @@ resetPage();
 
 continueButton.addEventListener('click', (e) => {
     pageNumber++;
-    if (pageNumber != 5) {
-        gradPos -= 20;
+    if (pageNumber != 4) {
+        gradPos -= 25;
     }
 
     document.getElementById("poem-text").innerHTML = ``;
 
-    if (pageNumber <= 6) {
+    if (pageNumber <= 5) {
         updatePage();
     }
-    if (pageNumber === 6) {
+    if (pageNumber === 5) {
         continueButton.innerHTML = "Reset";
-    } else if (pageNumber > 6) {
+    } else if (pageNumber > 5) {
         resetPage();
     }
 });
@@ -76,12 +76,6 @@ const poem = {
         'Some white as eiderdown."'
     ],
     "poem-5": [
-        "I met a child a year ago",
-        "Whose eyes would never see.",
-        "She asked me with a timid smile,",
-        "What colour is a tree?"
-    ],
-    "poem-6": [
         'She took her crayons from a box',
         'And placed them in my glove',
         'And said, "By mixing all of these',
