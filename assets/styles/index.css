@@ -1,10 +1,9 @@
 body {
-  background-image: -webkit-gradient(linear, left top, right top, from(#ff193a), color-stop(25%, #ffbf18), color-stop(50%, #ff3ee4), color-stop(75%, #8800ff), to(#00f9ff));
-  background-image: linear-gradient(to right, #ff193a 0%, #ffbf18 25%, #ff3ee4 50%, #8800ff 75%, #00f9ff 100%);
-  background-size: 2400%;
-  background-position: right;
-  -webkit-transition: all 15s;
-  transition: all 15s;
+  background: linear-gradient(221deg, #00acd9 0%, #00de60 25%, #ff9a1e 50%, #faff1e 75%, #1efaff 100%);
+  background-size: 2000%;
+  background-position: 100%;
+  -webkit-transition: all 3s;
+  transition: all 3s;
 }
 
 .container {
