@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: -webkit-gradient(linear, left top, right top, from(#00acd9), color-stop(25%, #00de60), color-stop(50%, #ff9a1e), color-stop(75%, #faff1e), to(#1efaff));
   background: linear-gradient(90deg, #00acd9 0%, #00de60 25%, #ff9a1e 50%, #faff1e 75%, #1efaff 100%);
