@@ -1,5 +1,6 @@
 body {
-  background: linear-gradient(221deg, #00acd9 0%, #00de60 25%, #ff9a1e 50%, #faff1e 75%, #1efaff 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#00acd9), color-stop(25%, #00de60), color-stop(50%, #ff9a1e), color-stop(75%, #faff1e), to(#1efaff));
+  background: linear-gradient(90deg, #00acd9 0%, #00de60 25%, #ff9a1e 50%, #faff1e 75%, #1efaff 100%);
   background-size: 2000%;
   background-position: 100%;
   -webkit-transition: all 3s;
@@ -14,6 +15,8 @@ body {
 }
 
 section {
+  width: 50%;
+  text-align: center;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-size: 2em;
   color: white;
