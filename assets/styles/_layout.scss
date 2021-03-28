@@ -62,20 +62,7 @@ button {
 
 .page-4 {
     /*Styles for page 4*/
-    animation-name: slideIn;
-    animation-duration: 5s;
-    animation-timing-function:ease-in;
-    color: red;
-  }
-    
-  @keyframes slideIn{
-    from{
-      transform: skrewX(53deg) translateX(-500px);
-    }
-    
-    to{
-      skrewX: (0deg);
-    }
+  
 }
 
 .page-5 {
