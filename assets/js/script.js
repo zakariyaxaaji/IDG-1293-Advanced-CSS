@@ -49,6 +49,7 @@ function resetPage() {
     document.body.className = `page-0`;
 }
 
+
 let div = document.createElement('div');
 div.className = 'apple';
 
@@ -57,6 +58,27 @@ div.appendChild(text);
 
 document.body.appendChild(div);
 
+/*
+let img = document.createElement('img');
+img.src = 'assets/ ;
+document.getElementById('body') .appendChild(img);
+down.innerHTML = "Image element added"
+
+
+const apple = document.querySelector(".apple")
+function chapter1() {
+  const fall = () => apple.classList.add("ground-position")
+  const spin = () => apple.classList.add("spin")
+  const roll = () => apple.classList.add("right-position")
+  const stop = () => apple.classList.remove("spin")
+  fall()
+  setTimeout(() => {
+    roll()
+    spin()
+    setTimeout(stop, 4000)
+  }, 1000)
+}
+*/
 
 const poem = {
     "poem-1": [
