@@ -49,6 +49,14 @@ function resetPage() {
     document.body.className = `page-0`;
 }
 
+let div = document.createElement('div');
+div.className = 'apple';
+
+let text = document.createTextNode('This is an apple');
+div.appendChild(text);
+
+document.body.appendChild(div);
+
 
 const poem = {
     "poem-1": [
