@@ -96,12 +96,22 @@ button:hover {
 }
 
 /*Apple animation*/
-@keyframes spin {
-  from { transform:rotate(0deg); }
-  to { transform:rotate(360deg); }
+.apple {
+  position: absolute;
+  top: -400px;
+  border: solid 1px;
+  width: 15%;
+  padding: 2em;
+  background-color: skyblue;
+
+  animation-name: drop;
+  animation-duration: 3s;
+  animation-fill-mode: linear forwards;
 }
 
-@keyframes fall {
-  from { transform:rotate(0deg); }
-  to { transform:rotate(360deg); }
+@keyframes drop{
+  0%{opacity: 0}
+  70%{transform: translateY(700px)}
+  100%{transform: translateY(650px)
+}
 }
