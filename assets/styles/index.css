@@ -25,7 +25,7 @@ section {
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-size: 2em;
   color: white;
-  background-color: #32323266;
+  background-color: rgba(50, 50, 50, 0.4);
   border-radius: 1em;
   padding: 5em;
 }
@@ -34,7 +34,7 @@ button {
   font-size: 0.8em;
   padding: 0.3em;
   color: white;
-  background: #32323266;
+  background: rgba(50, 50, 50, 0.4);
   border: 2px solid white;
   border-radius: 0.2em;
   font-family: "Poppins", sans-serif;
@@ -64,6 +64,46 @@ button:hover {
 
 .page-2 {
   /*Styles for page 2*/
+}
+
+.page-2 .tree {
+  position: absolute;
+  right: 25%;
+  bottom: 0px;
+}
+
+.page-2 .trunk {
+  z-index: -1;
+  position: absolute;
+  bottom: 0em;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: none;
+  background-color: #381515;
+  height: 50vmin;
+  width: 5vmin;
+  border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
+}
+
+.page-2 .branch {
+  position: relative;
+  background-color: #381515;
+  height: 19vmin;
+  width: 2vmin;
+  top: 2%;
+  right: -120%;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
+}
+
+.page-2 .branch:last-child {
+  top: -50%;
+  right: +70%;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
 }
 
 .page-3 {

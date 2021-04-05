@@ -1,3 +1,4 @@
+const body = document.body;
 const continueButton = document.getElementById("continue-button");
 const poemText = document.getElementById("poem-text");
 
@@ -17,28 +18,41 @@ continueButton.addEventListener('click', (e) => {
     if (pageNumber <= 5) {
         updatePage();
     }
-    if (pageNumber === 5) {
-        continueButton.innerHTML = "Reset";
-    } else if (pageNumber > 5) {
+    if (pageNumber > 5) {
         resetPage();
     }
 });
 
 function updatePage() {
-    document.body.className = `page-${pageNumber}`;
+    body.className = `page-${pageNumber}`;
     poem["poem-" + pageNumber].forEach(line => {
         const paragraph = document.createElement("P");
         paragraph.innerHTML = line;
         poemText.appendChild(paragraph);
     });
-    document.body.style.backgroundPosition = gradPos + "%";
-    console.log(gradPos)
+    body.style.backgroundPosition = gradPos + "%";
+    switch (pageNumber) {
+        case 0:
+            break;
+        case 1:
+            break;
+        case 2:
+            poem2();
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            continueButton.innerHTML = "Reset";
+            break;
+    }
 }
 
 function resetPage() {
     pageNumber = 0;
     gradPos = 100;
-    document.body.style.backgroundPosition = gradPos + "%";
+    body.style.backgroundPosition = gradPos + "%";
     const heading = document.createElement("H1");
     heading.innerHTML = "Favourite colour";
     poemText.appendChild(heading);
@@ -46,7 +60,25 @@ function resetPage() {
     paragraph.innerHTML = "by Joni Mitchell";
     poemText.appendChild(paragraph);
     continueButton.innerHTML = "Continue";
-    document.body.className = `page-0`;
+    body.className = `page-0`;
+}
+
+function poem2() {
+    const tree = document.createElement("DIV");
+    tree.className = "tree";
+    const trunk = document.createElement("DIV");
+    trunk.className = "trunk";
+    for (i = 0; i < 3; i++) {
+        const branch = document.createElement("DIV");
+        branch.className = "branch";
+        trunk.appendChild(branch);
+    }
+    tree.appendChild(trunk);
+    body.appendChild(tree);
+    /*
+    continueButton.addEventListener('click', (e) => {
+        console.log("Exists page 2");
+    });*/
 }
 
 
