@@ -62,14 +62,19 @@ button:hover {
   /*Styles for page 1*/
 }
 
+/**
+* PAGE 2
+*/
 .page-2 {
   /*Styles for page 2*/
 }
 
 .page-2 .tree {
   position: absolute;
-  right: 25%;
+  right: 0;
   bottom: 0px;
+  height: 50vmin;
+  width: 50vmin;
 }
 
 .page-2 .trunk {
@@ -104,6 +109,24 @@ button:hover {
   right: +70%;
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
+}
+
+.page-2 .topTree {
+  position: absolute;
+  top: -150px;
+  left: 0;
+  right: 0;
+  height: 50vmin;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+.page-2 .leaves {
+  position: absolute;
+  border-radius: 50%;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
 }
 
 .page-3 {

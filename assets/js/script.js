@@ -66,6 +66,41 @@ function resetPage() {
 function poem2() {
     const tree = document.createElement("DIV");
     tree.className = "tree";
+    const topTree = document.createElement("DIV");
+    topTree.className = "topTree";
+    for (i = 0; i < 30; i++) {
+        const leaves = document.createElement("DIV");
+        leaves.className = "leaves";
+        const randomSize = getRandomInt(3);
+        let size = 5;
+        if (randomSize === 0) {
+            size = 5;
+        } else if (randomSize === 1) {
+            size = 10;
+        } else if (randomSize === 2) {
+            size = 15;
+        }
+        const randomColor = getRandomInt(3);
+        let color = "rgba(198, 204, 109, 0.788)";
+        if (randomColor === 0) {
+            color = "rgba(198, 204, 109, 0.788)";
+        } else if (randomColor === 1) {
+            color = "rgba(151, 185, 112, 0.76)";
+        } else if (randomColor === 2) {
+            color = "rgba(51, 83, 44, 0.76)";
+        }
+        const bottom = getRandomInt(70);
+        const leftOrRight = getRandomInt(2) === 1 ? "left" : "right";
+        const horizontal = getRandomInt(50);
+        leaves.style = `
+            height: ${size}vmin;
+            width: ${size}vmin;
+            top: ${bottom}%;
+            ${leftOrRight}: ${horizontal}%;
+            background-color: ${color};
+        `;
+        topTree.appendChild(leaves);
+    }
     const trunk = document.createElement("DIV");
     trunk.className = "trunk";
     for (i = 0; i < 3; i++) {
@@ -73,12 +108,17 @@ function poem2() {
         branch.className = "branch";
         trunk.appendChild(branch);
     }
+    tree.appendChild(topTree);
     tree.appendChild(trunk);
     body.appendChild(tree);
     /*
     continueButton.addEventListener('click', (e) => {
         console.log("Exists page 2");
     });*/
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
 }
 
 
