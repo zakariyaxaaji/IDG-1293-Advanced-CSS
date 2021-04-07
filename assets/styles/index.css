@@ -1,15 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: -webkit-gradient(linear, left top, right top, from(#00acd9), color-stop(25%, #00de60), color-stop(50%, #ff9a1e), color-stop(75%, #faff1e), to(#1efaff));
-  background: linear-gradient(90deg, #00acd9 0%, #00de60 25%, #ff9a1e 50%, #faff1e 75%, #1efaff 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#00acd9), color-stop(25%, #faff1e), color-stop(45%, #ff9a1e), color-stop(55%, #ff5e00), color-stop(75%, #00de60), to(#1efaff));
+  background: linear-gradient(90deg, #00acd9 0%, #faff1e 25%, #ff9a1e 45%, #ff5e00 55%, #00de60 75%, #1efaff 100%);
   background-size: 2000%;
   background-position: 100%;
   -webkit-transition: all 3s;
   transition: all 3s;
+  font-family: 'New Tegomin', serif;
 }
 
 .container {
@@ -21,8 +23,8 @@ body {
 
 section {
   width: 50%;
+  min-height: 30%;
   text-align: center;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-size: 2em;
   color: white;
   background-color: rgba(50, 50, 50, 0.4);
@@ -32,15 +34,15 @@ section {
 
 button {
   font-size: 0.8em;
-  padding: 0.3em;
+  padding: 0.2em 0.6em 0.5em;
   color: white;
   background: rgba(50, 50, 50, 0.4);
   border: 2px solid white;
   border-radius: 0.2em;
-  font-family: "Poppins", sans-serif;
+  font-family: 'New Tegomin', serif;
   font-size: 1.7em;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
   margin: 1em;
   cursor: pointer;
 }
@@ -69,15 +71,36 @@ button:hover {
   /*Styles for page 2*/
 }
 
-.page-2 .tree {
+.tree {
   position: absolute;
   right: 0;
   bottom: 0px;
   height: 50vmin;
   width: 50vmin;
+  opacity: 0;
+  -webkit-transition: opacity 2.2s;
+  transition: opacity 2.2s;
 }
 
-.page-2 .trunk {
+.para {
+  opacity: 0;
+  -webkit-transition: opacity 2.2s;
+  transition: opacity 2.2s;
+  -webkit-transform: translate(10%, 10%);
+          transform: translate(10%, 10%);
+}
+
+.fadeIn {
+  opacity: 100;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.trunk {
   z-index: -1;
   position: absolute;
   bottom: 0em;
@@ -92,7 +115,7 @@ button:hover {
   border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
 }
 
-.page-2 .branch {
+.branch {
   position: relative;
   background-color: #381515;
   height: 19vmin;
@@ -104,14 +127,14 @@ button:hover {
   border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
 }
 
-.page-2 .branch:last-child {
+.branch:last-child {
   top: -50%;
   right: +70%;
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
 }
 
-.page-2 .topTree {
+.topTree {
   position: absolute;
   top: -150px;
   left: 0;
@@ -122,11 +145,13 @@ button:hover {
   width: auto;
 }
 
-.page-2 .leaves {
+.leaves {
   position: absolute;
   border-radius: 50%;
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
+  -webkit-box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.2);
+          box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.2);
 }
 
 .page-3 {

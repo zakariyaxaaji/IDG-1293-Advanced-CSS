@@ -1,6 +1,7 @@
 @import "_colors.scss";
 @import "_fonts.scss";
 @import "_layout.scss";
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
 
 * {
     margin: 0;
@@ -11,14 +12,16 @@ body {
     background: linear-gradient(
         90deg,
         $color-blue 0%,
-        $color-green 25%,
-        $color-orange 50%,
-        $color-yellow 75%,
+        $color-yellow 25%,
+        $color-orange 45%,
+        rgb(255, 94, 0) 55%,
+        $color-green 75%,
         $color-lightblue 100%
     );
     background-size: 2000%;
     background-position: 100%;
     transition: all 3s;
+    font-family: 'New Tegomin', serif;
 }
 
 .container {
@@ -29,8 +32,8 @@ body {
 
 section {
     width: 50%;
+    min-height: 30%;
     text-align: center;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
     font-size: 2em;
     color: white;
     background-color: $color-text-background;
@@ -40,14 +43,14 @@ section {
 
 button {
     font-size: 0.8em;
-    padding: 0.3em;
+    padding: 0.2em 0.6em 0.5em;
     color: white;
     background: $color-text-background;
     border: 2px solid white;
     border-radius: 0.2em;
-    font-family: "Poppins", sans-serif;
+    font-family: 'New Tegomin', serif;
     font-size: 1.7em;
-    transition: all 0.2s;
+    transition: all 0.8s;
     margin: 1em;
     cursor: pointer;
     &:focus {
@@ -74,15 +77,29 @@ button {
     /*Styles for page 2*/
 }
 
-.page-2 .tree {
+.tree {
     position: absolute;
     right: 0;
     bottom: 0px;
     height: 50vmin;
     width: 50vmin;
+    opacity: 0;
+    transition: opacity 2.2s;
 }
+.para{
+    opacity: 0;
+    transition: opacity 2.2s;
+    transform: translate(10%,10%);
+}
+.fadeIn {
+    opacity: 100;
+    transform: translate(0, 0);
 
-.page-2 .trunk {
+}
+.fadeOut {
+    opacity: 0;
+}
+.trunk {
     z-index: -1;
     position: absolute;
     bottom: 0em;
@@ -97,7 +114,7 @@ button {
     border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
 }
 
-.page-2 .branch {
+.branch {
     position: relative;
     background-color: $color-tree-branch;
     height: 19vmin;
@@ -108,13 +125,13 @@ button {
     border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
 }
 
-.page-2 .branch:last-child {
+.branch:last-child {
     top: -50%;
     right: +70%;
     transform: rotate(-30deg);
 }
 
-.page-2 .topTree {
+.topTree {
     position: absolute;
     top: -150px;
     left: 0;
@@ -125,12 +142,12 @@ button {
     width: auto;
 }
 
-.page-2 .leaves {
+.leaves {
     position: absolute;
     border-radius: 50%;
     transform: rotate(+30deg);
+    box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.2);
 }
-
 
 .page-3 {
     /*Styles for page 3*/
