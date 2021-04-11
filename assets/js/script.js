@@ -4,17 +4,20 @@ const poemText = document.getElementById("container__poem");
 const apple = document.createElement("IMG");
 
 let pageNumber = 0;
-let gradPos = 100;
+let gradPos = 100; // Gradient position used to move the background of the page
 
-resetPage();
+resetPage(); //Reset page gets called in the beginning to create the front page (page 0)
 
+/**
+ * Eventlistener on the continue/start/reset button that is displayed.
+ */
 continueButton.addEventListener('click', (e) => {
-    pageNumber++;
+    pageNumber++; // Go to the next page
     continueButton.style.opacity = '0';
-    continueButton.innerHTML = 'Continue'
-    if (pageNumber != 4) { gradPos -= 20; }
-    if (pageNumber <= 6) { updatePage(); }
-    if (pageNumber === 7) { resetPage(); }
+    continueButton.innerHTML = 'Continue';
+    if (pageNumber != 4) { gradPos -= 20 }
+    if (pageNumber <= 6) { updatePage() }
+    else if (pageNumber > 6) { resetPage() } // Reset the page (goes back to page 0)
 });
 
 function printPoem() {

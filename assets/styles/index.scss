@@ -64,19 +64,6 @@ button {
     }
 }
 
-.para {
-    opacity: 0;
-    transition: opacity 2.2s;
-    transform: translate(10%, 10%);
-}
-.fadeIn {
-    opacity: 100;
-    transform: translate(0, 0);
-}
-.fadeOut {
-    opacity: 0;
-}
-
 /**
 * Style for tree
 */
@@ -89,7 +76,18 @@ button {
     opacity: 0;
     transition: opacity 2.2s;
 }
-
+.para {
+    opacity: 0;
+    transition: opacity 2.2s;
+    transform: translate(10%, 10%);
+}
+.fadeIn {
+    opacity: 100;
+    transform: translate(0, 0);
+}
+.fadeOut {
+    opacity: 0;
+}
 .trunk {
     z-index: -1;
     position: absolute;
@@ -187,6 +185,7 @@ button {
     }
 }
 
+
 /**
 * Induvidual styles for each "page". Body class get updated when the button is clicked
 */
@@ -203,7 +202,7 @@ button {
 }
 
 .page-3 {
- 
+
 }
 
 .page-4 {
@@ -211,5 +210,5 @@ button {
 }
 
 .page-5 {
- 
+
 }
