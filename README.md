@@ -12,3 +12,9 @@ Project Description:
 
 Seperation of concerns:   
      Our files will be seperated into different folders to make it easier to handle different aspects of the solution. We have a folder for images, styles, and js. The different part of the styling files will have the naming scheme __nameOfYourConcern.scss and the rest of the files will use the BEM naming conventions.
+
+
+
+
+BEM 
+In the SCSS file, we used the common naming conventions of BEM For classes. Blocks in our code are given a normal class => .block and the children of that block will inherit its name with __ => .block__name of the element. In the instances where we used modifiers the names will be => .block__element--modifier. 

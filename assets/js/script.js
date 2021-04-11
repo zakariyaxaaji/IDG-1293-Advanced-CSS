@@ -1,7 +1,6 @@
 const body = document.body;
 const continueButton = document.getElementById("continue-button");
-const poemText = document.getElementById("poem-text");
-const apple = document.createElement("IMG");
+const poemText = document.getElementById("container__poem");
 
 let pageNumber = 0;
 let gradPos = 100;
@@ -45,7 +44,6 @@ function updatePage() {
         case 1:
             printPoem()
             makeTree('green');
-            makeApple();
             console.log('yeehaw')
             break;
         case 2:
@@ -69,15 +67,6 @@ function updatePage() {
             continueButton.innerHTML = "Reset";
             break;
     }
-}
-
-function makeApple() {
-    apple.src = "assets/images/apple.png";
-    apple.className = "apple";
-    apple.addEventListener("click", (e) => {
-        chapter1();
-    });
-    body.appendChild(apple);
 }
 
 function resetPage() {
@@ -107,7 +96,6 @@ function removeTree(time = 2200, num = 0) {
         trees[num].remove()
     }, time);
 }
-
 function makeTree(leafColor) {
     const tree = document.createElement("DIV");
     tree.className = "tree";
@@ -202,20 +190,6 @@ function getRandomInt(max) {
 }
 
 
-function chapter1() {
-    const fall = () => apple.classList.add("ground-position")
-    const spin = () => apple.classList.add("spin")
-    const roll = () => apple.classList.add("right-position")
-    const stop = () => apple.classList.remove("spin")
-    fall()
-    setTimeout(() => {
-        roll()
-        spin()
-        setTimeout(stop, 4000)
-    }, 1000)
-}
-
-/*
 let div = document.createElement('div');
 div.className = 'apple';
 
@@ -224,7 +198,7 @@ div.appendChild(text);
 
 document.body.appendChild(div);
 
-
+/*
 let img = document.createElement('img');
 img.src = 'assets/ ;
 document.getElementById('body') .appendChild(img);

@@ -1,7 +1,7 @@
 @import "_colors.scss";
 @import "_fonts.scss";
 @import "_layout.scss";
-@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
 
 * {
     margin: 0;
@@ -21,18 +21,15 @@ body {
     background-size: 2000%;
     background-position: 100%;
     transition: all 3s;
-    font-family: "New Tegomin", serif;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    font-family: 'New Tegomin', serif;
 }
 
 .container {
     height: 100vh;
     display: grid;
     place-items: center;
-}
 
-section {
+    &__section {
     width: 50%;
     min-height: 30%;
     text-align: center;
@@ -41,43 +38,46 @@ section {
     background-color: $color-text-background;
     border-radius: 1em;
     padding: 5em;
-}
-
-button {
-    font-size: 0.8em;
-    padding: 0.2em 0.6em 0.5em;
-    color: white;
-    background: $color-text-background;
-    border: 2px solid white;
-    border-radius: 0.2em;
-    font-family: "New Tegomin", serif;
-    font-size: 1.7em;
-    transition: all 0.8s;
-    margin: 1em;
-    cursor: pointer;
-    &:focus {
-        outline: 0;
     }
-    &:hover {
-        background: white;
-        color: rgba(2, 221, 215, 1);
+
+    &__button {
+        font-size: 0.8em;
+        padding: 0.2em 0.6em 0.5em;
+        color: white;
+        background: $color-text-background;
+        border: 2px solid white;
+        border-radius: 0.2em;
+        font-family: 'New Tegomin', serif;
+        font-size: 1.7em;
+        transition: all 0.8s;
+        margin: 1em;
+        cursor: pointer;
+        &--focus {
+            outline: 0;
+        }
+        &--hover {
+            background: white;
+            color: rgba(2, 221, 215, 1);
+        }
     }
+
+    &__para{
+        opacity: 0;
+        transition: opacity 2.2s;
+        transform: translate(10%,10%);
+    }
+
+    &__fadeIn {
+        opacity: 100;
+        transform: translate(0, 0);
+    
+    }
+
 }
 
-.page-0 {
-    /*Styles for page 0*/
-}
 
-.page-1 {
-    /*Styles for page 1*/
-}
 
-/**
-* PAGE 2
-*/
-.page-2 {
-    /*Styles for page 2*/
-}
+
 
 .tree {
     position: absolute;
@@ -87,79 +87,57 @@ button {
     width: 50vmin;
     opacity: 0;
     transition: opacity 2.2s;
-}
-.para {
-    opacity: 0;
-    transition: opacity 2.2s;
-    transform: translate(10%, 10%);
-}
-.fadeIn {
-    opacity: 100;
-    transform: translate(0, 0);
-}
-.fadeOut {
-    opacity: 0;
-}
-.trunk {
-    z-index: -1;
-    position: absolute;
-    bottom: 0em;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: none;
-    background-color: $color-tree-branch;
-    height: 50vmin;
-    width: 5vmin;
-    border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
-}
 
-.branch {
-    position: relative;
-    background-color: $color-tree-branch;
-    height: 19vmin;
-    width: 2vmin;
-    top: 2%;
-    right: -120%;
-    transform: rotate(+30deg);
-    border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
-}
+    &__topTree {
+        position: absolute;
+        top: -150px;
+        left: 0;
+        right: 0;
+        height: 50vmin;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
 
-.branch:last-child {
-    top: -50%;
-    right: +70%;
-    transform: rotate(-30deg);
-}
+    &__trunk {
+        z-index: -1;
+        position: absolute;
+        bottom: 0em;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: none;
+        background-color: $color-tree-branch;
+        height: 50vmin;
+        width: 5vmin;
+        border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
+    }
 
-.topTree {
-    position: absolute;
-    top: -150px;
-    left: 0;
-    right: 0;
-    height: 50vmin;
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
-}
+    &__branch {
+        position: relative;
+        background-color: $color-tree-branch;
+        height: 19vmin;
+        width: 2vmin;
+        top: 2%;
+        right: -120%;
+        transform: rotate(+30deg);
+        border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
 
-.leaves {
-    position: absolute;
-    border-radius: 50%;
-    transform: rotate(+30deg);
-    box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.2);
-}
+            &--last-child {
+                top: -50%;
+                right: +70%;
+                transform: rotate(-30deg);
+            }
+    }
 
-.page-3 {
-    /*Styles for page 3*/
-}
-
-.page-4 {
-    /*Styles for page 4*/
-}
-
-.page-5 {
-    /*Styles for page 5*/
+    &__leaves {
+        position: absolute;
+        border-radius: 50%;
+        transform: rotate(+30deg);
+        box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.2);
+    }
+    
 }
 
 .apple {
@@ -168,38 +146,11 @@ button {
     /* Transition animation on position change */
     top: 95px;
     right: 0;
+.fadeOut {
+    opacity: 0;
 }
 
-/* Positions */
-.ground-position {
-    transition: all 1s ease-in;
-    top: 60vh;
-}
 
-.right-position {
-    transition: all 4s ease-out;
-    left: 75vw;
-    top: 70vh;
-}
 
-.spin {
-    animation: spin 2s infinite linear;
-}
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
 
-@keyframes fall {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
