@@ -1,6 +1,7 @@
 const body = document.body;
 const continueButton = document.getElementById("continue-button");
 const poemText = document.getElementById("container__poem");
+apple = document.createElement("IMG");
 
 let pageNumber = 0;
 let gradPos = 100;
@@ -44,6 +45,7 @@ function updatePage() {
         case 1:
             printPoem()
             makeTree('green');
+            makeApple();
             console.log('yeehaw')
             break;
         case 2:
@@ -83,6 +85,15 @@ function resetPage() {
     continueButton.innerHTML = "Start";
     body.className = `page-0`;
     continueButton.style.opacity = '100';
+}
+
+function makeApple() {
+    apple.src = "assets/images/apple.png";
+    apple.className = "apple";
+    apple.addEventListener("click", (e) => {
+        chapter1();
+    });
+    body.appendChild(apple);
 }
 
 function removeTree(time = 2200, num = 0) {
@@ -136,6 +147,19 @@ function makeTree(leafColor) {
                 if (randomColor === 1) { color = "rgb(255, 255, 255, 0.56)"; }
                 if (randomColor === 2) { color = "rgb(255, 255, 255, 0.66)"; }
                 break;
+        }
+
+        function chapter1() {
+            const fall = () => apple.classList.add("ground-position")
+            const spin = () => apple.classList.add("spin")
+            const roll = () => apple.classList.add("right-position")
+            const stop = () => apple.classList.remove("spin")
+            fall()
+            setTimeout(() => {
+                roll()
+                spin()
+                setTimeout(stop, 4000)
+            }, 1000)
         }
 
         // position of each leaf will be randomly placed within the top 70% of the tree and randomly 50% from either left or right.

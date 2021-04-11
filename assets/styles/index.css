@@ -11,9 +11,7 @@ body {
   background-position: 100%;
   -webkit-transition: all 3s;
   transition: all 3s;
-  font-family: "New Tegomin", serif;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  font-family: 'New Tegomin', serif;
 }
 
 .container {
@@ -23,7 +21,7 @@ body {
   place-items: center;
 }
 
-section {
+.container__section {
   width: 50%;
   min-height: 30%;
   text-align: center;
@@ -34,14 +32,14 @@ section {
   padding: 5em;
 }
 
-button {
+.container__button {
   font-size: 0.8em;
   padding: 0.2em 0.6em 0.5em;
   color: white;
   background: rgba(50, 50, 50, 0.4);
   border: 2px solid white;
   border-radius: 0.2em;
-  font-family: "New Tegomin", serif;
+  font-family: 'New Tegomin', serif;
   font-size: 1.7em;
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
@@ -49,15 +47,28 @@ button {
   cursor: pointer;
 }
 
-button:focus {
+.container__button--focus {
   outline: 0;
 }
 
-button:hover {
+.container__button--hover {
   background: white;
   color: #02ddd7;
 }
 
+.container__para {
+  opacity: 0;
+  -webkit-transition: opacity 2.2s;
+  transition: opacity 2.2s;
+  -webkit-transform: translate(10%, 10%);
+          transform: translate(10%, 10%);
+}
+
+.container__fadeIn {
+  opacity: 100;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
 
 .tree {
   position: absolute;
@@ -70,25 +81,18 @@ button:hover {
   transition: opacity 2.2s;
 }
 
-.para {
-  opacity: 0;
-  -webkit-transition: opacity 2.2s;
-  transition: opacity 2.2s;
-  -webkit-transform: translate(10%, 10%);
-          transform: translate(10%, 10%);
+.tree__topTree {
+  position: absolute;
+  top: -150px;
+  left: 0;
+  right: 0;
+  height: 50vmin;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
 }
 
-.fadeIn {
-  opacity: 100;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-}
-
-.fadeOut {
-  opacity: 0;
-}
-
-.trunk {
+.tree__trunk {
   z-index: -1;
   position: absolute;
   bottom: 0em;
@@ -103,7 +107,7 @@ button:hover {
   border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
 }
 
-.branch {
+.tree__branch {
   position: relative;
   background-color: #381515;
   height: 19vmin;
@@ -115,43 +119,20 @@ button:hover {
   border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
 }
 
-.branch:last-child {
+.tree__branch--last-child {
   top: -50%;
   right: +70%;
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
 }
 
-.topTree {
-  position: absolute;
-  top: -150px;
-  left: 0;
-  right: 0;
-  height: 50vmin;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-}
-
-.leaves {
+.tree__leaves {
   position: absolute;
   border-radius: 50%;
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
   -webkit-box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.2);
           box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.2);
-}
-
-.page-3 {
-  /*Styles for page 3*/
-}
-
-.page-4 {
-  /*Styles for page 4*/
-}
-
-.page-5 {
-  /*Styles for page 5*/
 }
 
 .apple {
@@ -223,5 +204,9 @@ button:hover {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+
+.fadeOut {
+  opacity: 0;
 }
 /*# sourceMappingURL=index.css.map */

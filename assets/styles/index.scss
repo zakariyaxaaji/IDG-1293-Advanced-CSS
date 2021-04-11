@@ -146,6 +146,42 @@ body {
     /* Transition animation on position change */
     top: 95px;
     right: 0;
+    }
+    
+    /* Positions */
+    .ground-position {
+        transition: all 1s ease-in;
+        top: 60vh;
+    }
+    
+    .right-position {
+        transition: all 4s ease-out;
+        left: 75vw;
+        top: 70vh;
+    }
+    
+    .spin {
+        animation: spin 2s infinite linear;
+    }
+    
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    @keyframes fall {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
 .fadeOut {
     opacity: 0;
 }
