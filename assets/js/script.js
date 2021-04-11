@@ -20,8 +20,10 @@ continueButton.addEventListener('click', (e) => {
     else if (pageNumber > 6) { resetPage() } // Reset the page (goes back to page 0)
 });
 
+/**
+ * Prints all lines of current paragraph of the poem matching the page number.
+ */
 function printPoem() {
-    // prints all lines of current paragraph of the poem matching the page number.
     poemText.innerHTML = '';
     poem["poem-" + pageNumber].forEach((line, i) => {
         const paragraph = document.createElement("P");
@@ -32,6 +34,9 @@ function printPoem() {
     });
 }
 
+/**
+ * Updates the page. Runs on each click on the continue/start/reset button.
+ */
 function updatePage() {
     body.className = `page-${pageNumber}`;
     setTimeout(function () {
@@ -43,38 +48,39 @@ function updatePage() {
 
     switch (pageNumber) {
         case 0:
-            printPoem()
+            printPoem();
             break;
         case 1:
-            printPoem()
+            printPoem();
             makeTree('green');
             makeApple();
-            console.log('yeehaw')
             break;
         case 2:
-            printPoem()
-            chapter1();
-            removeTree()
+            printPoem();
+            removeTree();
             makeTree('red');
             break;
         case 3:
-            removeTree()
+            removeTree();
             makeTree('white');
             break;
         case 4:
-            printPoem()
-            removeTree()
+            printPoem();
+            removeTree();
             break;
         case 5:
-            printPoem()
+            printPoem();
             break;
         case 6:
-            printPoem()
+            printPoem();
             continueButton.innerHTML = "Reset";
             break;
     }
 }
 
+/**
+ * Reset Page function takes the website back to the initial state
+ */
 function resetPage() {
     poemText.innerHTML = '';
     pageNumber = 0;
@@ -96,42 +102,30 @@ function makeApple() {
     apple.src = "assets/images/apple.png";
     apple.className = "apple";
     apple.addEventListener("click", (e) => {
-        chapter1();
+        const fall = () => apple.classList.add("ground-position")
+        const spin = () => apple.classList.add("spin")
+        const roll = () => apple.classList.add("right-position")
+        const stop = () => apple.classList.remove("spin")
+        fall()
+        setTimeout(() => {
+            roll()
+            spin()
+            setTimeout(stop, 4000)
+        }, 1000)
     });
     body.appendChild(apple);
 }
 
-function removeTree(time = 2200, num = 0) {
-    // removes the tree object from the document.
-    // might animate this instead hmmmmm
-    let trees = document.getElementsByClassName("tree");
-    if (!trees) return
-    trees[num].className = 'tree fadeOut';
-    console.log(trees[num])
-    setTimeout(function () {
-        trees[num].remove()
-    }, time);
-}
-
-function chapter1() {
-    const fall = () => apple.classList.add("ground-position")
-    const spin = () => apple.classList.add("spin")
-    const roll = () => apple.classList.add("right-position")
-    const stop = () => apple.classList.remove("spin")
-    fall()
-    setTimeout(() => {
-        roll()
-        spin()
-        setTimeout(stop, 4000)
-    }, 1000)
-}
-
+/**
+ * Creates and displays the tree
+ * 
+ * @param {String} leafColor - Color of the leaves
+ */
 function makeTree(leafColor) {
     const tree = document.createElement("DIV");
     tree.className = "tree";
     setTimeout(function () {
         tree.className = 'tree fadeIn';
-        console.log('this is dumb but it does work')
     }, 10);
     const topTree = document.createElement("DIV");
     topTree.className = "topTree";
@@ -185,16 +179,6 @@ function makeTree(leafColor) {
         topTree.appendChild(leaves);
     }
 
-    // if (leafColor === 'red') {
-    //     setTimeout(function () {
-    //         fadeToWhite()
-    //     }, 2000);
-    // }
-    // function fadeToWhite() {
-    //     removeTree()
-    //     makeTree('white')
-    // }
-
     // adding a tree trunk
     const trunk = document.createElement("DIV");
     trunk.className = "trunk";
@@ -210,47 +194,33 @@ function makeTree(leafColor) {
     tree.appendChild(topTree);
     tree.appendChild(trunk);
     body.appendChild(tree);
-    /*
-    continueButton.addEventListener('click', (e) => {
-        console.log("Exists page 2");
-    });*/
 }
 
+/**
+ * Removes the tree
+ */
+function removeTree(time = 2200, num = 0) {
+    let trees = document.getElementsByClassName("tree");
+    if (!trees) return
+    trees[num].className = 'tree fadeOut';
+    console.log(trees[num])
+    setTimeout(function () {
+        trees[num].remove()
+    }, time);
+}
+
+/**
+ * Return a random integer
+ * @param {Number} max - Highest number to return - 1. E.g. 3 returns a number between 0 and 2
+ * @returns - A random integer
+ */
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-
-let div = document.createElement('div');
-div.className = 'apple';
-
-let text = document.createTextNode('');
-div.appendChild(text);
-
-document.body.appendChild(div);
-
-/*
-let img = document.createElement('img');
-img.src = 'assets/ ;
-document.getElementById('body') .appendChild(img);
-down.innerHTML = "Image element added"
-
-
-const apple = document.querySelector(".apple")
-function chapter1() {
-  const fall = () => apple.classList.add("ground-position")
-  const spin = () => apple.classList.add("spin")
-  const roll = () => apple.classList.add("right-position")
-  const stop = () => apple.classList.remove("spin")
-  fall()
-  setTimeout(() => {
-    roll()
-    spin()
-    setTimeout(stop, 4000)
-  }, 1000)
-}
-*/
-
+/**
+ * Poem/text to be displayed
+ */
 const poem = {
     "poem-1": [
         'I met a child a year ago',
