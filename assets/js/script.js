@@ -1,7 +1,7 @@
 const body = document.body;
 const continueButton = document.getElementById("continue-button");
 const poemText = document.getElementById("container__poem");
-apple = document.createElement("IMG");
+const apple = document.createElement("IMG");
 
 let pageNumber = 0;
 let gradPos = 100;
@@ -87,6 +87,7 @@ function resetPage() {
     continueButton.style.opacity = '100';
 }
 
+// Making apple //
 function makeApple() {
     apple.src = "assets/images/apple.png";
     apple.className = "apple";
@@ -217,7 +218,7 @@ function getRandomInt(max) {
 let div = document.createElement('div');
 div.className = 'apple';
 
-let text = document.createTextNode('This is an apple');
+let text = document.createTextNode('');
 div.appendChild(text);
 
 document.body.appendChild(div);
