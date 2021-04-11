@@ -50,6 +50,7 @@ function updatePage() {
             break;
         case 2:
             printPoem()
+            chapter1();
             removeTree()
             makeTree('red');
             break;
@@ -108,6 +109,20 @@ function removeTree(time = 2200, num = 0) {
         trees[num].remove()
     }, time);
 }
+
+function chapter1() {
+    const fall = () => apple.classList.add("ground-position")
+    const spin = () => apple.classList.add("spin")
+    const roll = () => apple.classList.add("right-position")
+    const stop = () => apple.classList.remove("spin")
+    fall()
+    setTimeout(() => {
+        roll()
+        spin()
+        setTimeout(stop, 4000)
+    }, 1000)
+}
+
 function makeTree(leafColor) {
     const tree = document.createElement("DIV");
     tree.className = "tree";
@@ -150,18 +165,6 @@ function makeTree(leafColor) {
                 break;
         }
 
-        function chapter1() {
-            const fall = () => apple.classList.add("ground-position")
-            const spin = () => apple.classList.add("spin")
-            const roll = () => apple.classList.add("right-position")
-            const stop = () => apple.classList.remove("spin")
-            fall()
-            setTimeout(() => {
-                roll()
-                spin()
-                setTimeout(stop, 4000)
-            }, 1000)
-        }
 
         // position of each leaf will be randomly placed within the top 70% of the tree and randomly 50% from either left or right.
         const bottom = getRandomInt(70);

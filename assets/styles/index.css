@@ -11,7 +11,9 @@ body {
   background-position: 100%;
   -webkit-transition: all 3s;
   transition: all 3s;
-  font-family: 'New Tegomin', serif;
+  font-family: "New Tegomin", serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .container {
@@ -21,7 +23,7 @@ body {
   place-items: center;
 }
 
-.container__section {
+section {
   width: 50%;
   min-height: 30%;
   text-align: center;
@@ -32,14 +34,14 @@ body {
   padding: 5em;
 }
 
-.container__button {
+button {
   font-size: 0.8em;
   padding: 0.2em 0.6em 0.5em;
   color: white;
   background: rgba(50, 50, 50, 0.4);
   border: 2px solid white;
   border-radius: 0.2em;
-  font-family: 'New Tegomin', serif;
+  font-family: "New Tegomin", serif;
   font-size: 1.7em;
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
@@ -47,27 +49,28 @@ body {
   cursor: pointer;
 }
 
-.container__button--focus {
+button:focus {
   outline: 0;
 }
 
-.container__button--hover {
+button:hover {
   background: white;
   color: #02ddd7;
 }
 
-.container__para {
-  opacity: 0;
-  -webkit-transition: opacity 2.2s;
-  transition: opacity 2.2s;
-  -webkit-transform: translate(10%, 10%);
-          transform: translate(10%, 10%);
+.page-0 {
+  /*Styles for page 0*/
 }
 
-.container__fadeIn {
-  opacity: 100;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
+.page-1 {
+  /*Styles for page 1*/
+}
+
+/**
+* PAGE 2
+*/
+.page-2 {
+  /*Styles for page 2*/
 }
 
 .tree {
@@ -81,18 +84,25 @@ body {
   transition: opacity 2.2s;
 }
 
-.tree__topTree {
-  position: absolute;
-  top: -150px;
-  left: 0;
-  right: 0;
-  height: 50vmin;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
+.para {
+  opacity: 0;
+  -webkit-transition: opacity 2.2s;
+  transition: opacity 2.2s;
+  -webkit-transform: translate(10%, 10%);
+          transform: translate(10%, 10%);
 }
 
-.tree__trunk {
+.fadeIn {
+  opacity: 100;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.trunk {
   z-index: -1;
   position: absolute;
   bottom: 0em;
@@ -107,7 +117,7 @@ body {
   border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
 }
 
-.tree__branch {
+.branch {
   position: relative;
   background-color: #381515;
   height: 19vmin;
@@ -119,14 +129,25 @@ body {
   border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
 }
 
-.tree__branch--last-child {
+.branch:last-child {
   top: -50%;
   right: +70%;
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
 }
 
-.tree__leaves {
+.topTree {
+  position: absolute;
+  top: -150px;
+  left: 0;
+  right: 0;
+  height: 50vmin;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+.leaves {
   position: absolute;
   border-radius: 50%;
   -webkit-transform: rotate(30deg);
@@ -135,11 +156,24 @@ body {
           box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.2);
 }
 
+.page-3 {
+  /*Styles for page 3*/
+}
+
+.page-4 {
+  /*Styles for page 4*/
+}
+
+.page-5 {
+  /*Styles for page 5*/
+}
+
 .apple {
   position: absolute;
-  width: 400px;
+  z-index: 1;
+  width: 500px;
   /* Transition animation on position change */
-  top: 95px;
+  top: 0;
   right: 0;
 }
 
@@ -204,9 +238,5 @@ body {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
-}
-
-.fadeOut {
-  opacity: 0;
 }
 /*# sourceMappingURL=index.css.map */
