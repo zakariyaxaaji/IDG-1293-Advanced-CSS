@@ -198,14 +198,17 @@ function makeTree(leafColor) {
 
 /**
  * Removes the tree
+ * 
+ * @param {Number} time - The time in ms to remove the tree
+ * @param {Number} num - Which number in the elements array the tree is located
+ * @returns 
  */
 function removeTree(time = 2200, num = 0) {
     let trees = document.getElementsByClassName("tree");
     if (!trees) return
     trees[num].className = 'tree fadeOut';
-    console.log(trees[num])
     setTimeout(function () {
-        trees[num].remove()
+        trees[num].remove();
     }, time);
 }
 
