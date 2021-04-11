@@ -1,6 +1,6 @@
 const body = document.body;
 const continueButton = document.getElementById("continue-button");
-const poemText = document.getElementById("poem-text");
+const poemText = document.getElementById("container__poem");
 
 let pageNumber = 0;
 let gradPos = 100;
