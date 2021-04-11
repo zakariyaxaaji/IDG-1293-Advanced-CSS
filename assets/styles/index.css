@@ -11,7 +11,9 @@ body {
   background-position: 100%;
   -webkit-transition: all 3s;
   transition: all 3s;
-  font-family: 'New Tegomin', serif;
+  font-family: "New Tegomin", serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .container {
@@ -39,7 +41,7 @@ button {
   background: rgba(50, 50, 50, 0.4);
   border: 2px solid white;
   border-radius: 0.2em;
-  font-family: 'New Tegomin', serif;
+  font-family: "New Tegomin", serif;
   font-size: 1.7em;
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
@@ -164,5 +166,76 @@ button:hover {
 
 .page-5 {
   /*Styles for page 5*/
+}
+
+.apple {
+  position: absolute;
+  width: 500px;
+  /* Transition animation on position change */
+  top: 0;
+  right: 0;
+}
+
+/* Positions */
+.ground-position {
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+  top: 60vh;
+}
+
+.right-position {
+  -webkit-transition: all 4s ease-out;
+  transition: all 4s ease-out;
+  left: 75vw;
+  top: 70vh;
+}
+
+.spin {
+  -webkit-animation: spin 2s infinite linear;
+          animation: spin 2s infinite linear;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fall {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes fall {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 /*# sourceMappingURL=index.css.map */

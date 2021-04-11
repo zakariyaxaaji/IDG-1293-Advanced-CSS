@@ -1,7 +1,7 @@
 @import "_colors.scss";
 @import "_fonts.scss";
 @import "_layout.scss";
-@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
 
 * {
     margin: 0;
@@ -21,7 +21,9 @@ body {
     background-size: 2000%;
     background-position: 100%;
     transition: all 3s;
-    font-family: 'New Tegomin', serif;
+    font-family: "New Tegomin", serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .container {
@@ -48,7 +50,7 @@ button {
     background: $color-text-background;
     border: 2px solid white;
     border-radius: 0.2em;
-    font-family: 'New Tegomin', serif;
+    font-family: "New Tegomin", serif;
     font-size: 1.7em;
     transition: all 0.8s;
     margin: 1em;
@@ -86,15 +88,14 @@ button {
     opacity: 0;
     transition: opacity 2.2s;
 }
-.para{
+.para {
     opacity: 0;
     transition: opacity 2.2s;
-    transform: translate(10%,10%);
+    transform: translate(10%, 10%);
 }
 .fadeIn {
     opacity: 100;
     transform: translate(0, 0);
-
 }
 .fadeOut {
     opacity: 0;
@@ -159,4 +160,46 @@ button {
 
 .page-5 {
     /*Styles for page 5*/
+}
+
+.apple {
+    position: absolute;
+    width: 500px;
+    /* Transition animation on position change */
+    top: 0;
+    right: 0;
+}
+
+/* Positions */
+.ground-position {
+    transition: all 1s ease-in;
+    top: 60vh;
+}
+
+.right-position {
+    transition: all 4s ease-out;
+    left: 75vw;
+    top: 70vh;
+}
+
+.spin {
+    animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fall {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
