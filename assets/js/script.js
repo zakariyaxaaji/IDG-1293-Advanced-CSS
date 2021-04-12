@@ -50,7 +50,7 @@ function updatePage() {
             break;
         case 2:
             printPoem()
-            chapter1();
+            chapter2();
             removeTree()
             makeTree('red');
             break;
@@ -114,13 +114,24 @@ function chapter1() {
     const fall = () => apple.classList.add("ground-position")
     const spin = () => apple.classList.add("spin")
     const roll = () => apple.classList.add("right-position")
-    const stop = () => apple.classList.remove("spin")
     fall()
     setTimeout(() => {
         roll()
         spin()
-        setTimeout(stop, 4000)
     }, 1000)
+}
+
+function chapter2() {
+    // Remove old chapter animation
+    apple.classList.remove("right-position")
+
+    // Apply left position
+    apple.classList.add("left-position")
+    setTimeout(() => {
+        apple.classList.add("left-to-right-position")
+        setTimeout(() => apple.classList.remove("spin"), 4500)
+    }, 1000)
+
 }
 
 function makeTree(leafColor) {

@@ -165,22 +165,36 @@ button {
 .apple {
     position: absolute;
     z-index: 1;
-    width: 500px;
+    width: 150px;
     /* Transition animation on position change */
-    top: 0;
-    right: 0;
+    top: 40vh;
+    /* Position pre-set for animation */
+    right: 100px;
+    bottom: 40vh;
 }
 
 /* Positions */
 .ground-position {
     transition: all 1s ease-in;
-    top: 60vh;
+    top: auto;
+    bottom: 0;
 }
 
 .right-position {
     transition: all 4s ease-out;
-    left: 75vw;
-    top: 70vh;
+    right: -150px;
+    bottom: 0;
+}
+
+.left-position {
+    transition: all 4s ease-out;
+    left: -150px;
+    bottom: 0;
+}
+
+.left-to-right-position {
+    transition: all 5.5s ease-out;
+    left: 85vw;
 }
 
 .spin {
