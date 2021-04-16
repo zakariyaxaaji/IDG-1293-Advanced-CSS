@@ -56,6 +56,7 @@ function updatePage() {
             break;
         case 3:
             removeTree()
+            chapter2();
             makeTree('white');
             break;
         case 4:
@@ -92,9 +93,10 @@ function resetPage() {
 function makeApple() {
     apple.src = "assets/images/apple.png";
     apple.className = "apple";
-    apple.addEventListener("click", (e) => {
+    setTimeout(() => {
         chapter1();
-    });
+    }, 1000)
+    
     body.appendChild(apple);
 }
 
