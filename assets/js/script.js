@@ -5,6 +5,8 @@ const apple = document.createElement("IMG");
 
 let pageNumber = 0;
 let gradPos = 100; // Gradient position used to move the background of the page
+let isTreeWhite = false;
+
 
 resetPage(); //Reset page gets called in the beginning to create the front page (page 0)
 
@@ -12,12 +14,21 @@ resetPage(); //Reset page gets called in the beginning to create the front page 
  * Eventlistener on the continue/start/reset button that is displayed.
  */
 continueButton.addEventListener('click', (e) => {
-    pageNumber++; // Go to the next page
-    continueButton.style.opacity = '0';
-    continueButton.innerHTML = 'Continue';
-    if (pageNumber != 4) { gradPos -= 20 }
-    if (pageNumber <= 6) { updatePage() }
-    else if (pageNumber > 6) { resetPage() } // Reset the page (goes back to page 0)
+    console.log(pageNumber);
+    // If pagenumber is 2 and the tree is not white...
+    if (pageNumber === 2 && !isTreeWhite) {
+        // Make tree white (New poem is NOT loaded)
+        removeTree();
+        makeTree('white');
+        isTreeWhite = true;
+    } else {
+        pageNumber++; // Go to the next page
+        continueButton.style.opacity = '0';
+        continueButton.innerHTML = 'Continue';
+        if (pageNumber != 4) { gradPos -= 20 }
+        if (pageNumber <= 5) { updatePage() }
+        else if (pageNumber > 5) { resetPage() } // Reset the page (goes back to page 0)
+    }
 });
 
 /**
@@ -38,6 +49,8 @@ function printPoem() {
  * Updates the page. Runs on each click on the continue/start/reset button.
  */
 function updatePage() {
+    printPoem();
+
     body.className = `page-${pageNumber}`;
     setTimeout(function () {
         continueButton.style.opacity = '100'
@@ -48,32 +61,22 @@ function updatePage() {
 
     switch (pageNumber) {
         case 0:
-            printPoem();
             break;
         case 1:
-            printPoem();
             makeTree('green');
             makeApple();
             break;
         case 2:
-            printPoem();
             chapter2();
             removeTree();
             makeTree('red');
             break;
         case 3:
             removeTree();
-            makeTree('white');
             break;
         case 4:
-            printPoem();
-            removeTree();
             break;
         case 5:
-            printPoem();
-            break;
-        case 6:
-            printPoem();
             continueButton.innerHTML = "Reset";
             break;
     }
@@ -86,6 +89,7 @@ function resetPage() {
     poemText.innerHTML = '';
     pageNumber = 0;
     gradPos = 100;
+    isTreeWhite = false;
     body.style.backgroundPosition = gradPos + "%";
     const heading = document.createElement("H1");
     heading.innerHTML = "Favourite colour";
@@ -113,7 +117,7 @@ function makeApple() {
             spin()
         }, 1000)
     }, 1000)
-    
+
     body.appendChild(apple);
 }
 
@@ -252,21 +256,18 @@ const poem = {
         'when all their leaves are shed."'
     ],
     "poem-3": [
-        'this wont print, kinda cheeky solution i guess'
-    ],
-    "poem-4": [
         '"I know the sky is blue," she said.',
         '"And silver is the sand;',
         'And apples are the brightest red.',
         'What colour is a man?"'
     ],
-    "poem-5": [
+    "poem-4": [
         '"Man is many colours child:',
         'Some are yellow, some are brown.',
         'And some are black as sightlessness,',
         'Some white as eiderdown."'
     ],
-    "poem-6": [
+    "poem-5": [
         'She took her crayons from a box',
         'And placed them in my glove',
         'And said, "By mixing all of these',
