@@ -2,6 +2,7 @@ const body = document.body;
 const continueButton = document.getElementById("continue-button");
 const poemText = document.getElementById("container__poem");
 const apple = document.createElement("IMG");
+const rainbow = document.createElement("FIGURE");
 
 let pageNumber = 0;
 let gradPos = 100; // Gradient position used to move the background of the page
@@ -14,10 +15,9 @@ resetPage(); //Reset page gets called in the beginning to create the front page 
  * Eventlistener on the continue/start/reset button that is displayed.
  */
 continueButton.addEventListener('click', (e) => {
-    console.log(pageNumber);
     // If pagenumber is 2 and the tree is not white...
     if (pageNumber === 2 && !isTreeWhite) {
-        // Make tree white (New poem is NOT loaded)
+        // ... Make tree white (New poem is NOT loaded)
         removeTree();
         makeTree('white');
         isTreeWhite = true;
@@ -60,7 +60,7 @@ function updatePage() {
     body.style.backgroundPosition = gradPos + "%";
 
     switch (pageNumber) {
-        case 0:
+        case 0: //Will never run
             break;
         case 1:
             makeTree('green');
@@ -75,8 +75,10 @@ function updatePage() {
             removeTree();
             break;
         case 4:
+            addRainbow();
             break;
         case 5:
+            removeRainbow();
             continueButton.innerHTML = "Reset";
             break;
     }
@@ -132,6 +134,15 @@ function chapter2() {
         setTimeout(() => apple.classList.remove("spin"), 4500)
     }, 1000)
 
+}
+
+function addRainbow() {
+    rainbow.className = "rainbow smooth";
+    body.appendChild(rainbow);
+}
+
+function removeRainbow() {
+    body.removeChild(rainbow);
 }
 
 /**
