@@ -57,6 +57,7 @@ function updatePage() {
             break;
         case 2:
             printPoem();
+            chapter2();
             removeTree();
             makeTree('red');
             break;
@@ -101,19 +102,32 @@ function resetPage() {
 function makeApple() {
     apple.src = "assets/images/apple.png";
     apple.className = "apple";
-    apple.addEventListener("click", (e) => {
+    setTimeout(() => {
+        // Add animations to apple
         const fall = () => apple.classList.add("ground-position")
         const spin = () => apple.classList.add("spin")
         const roll = () => apple.classList.add("right-position")
-        const stop = () => apple.classList.remove("spin")
         fall()
         setTimeout(() => {
             roll()
             spin()
-            setTimeout(stop, 4000)
         }, 1000)
-    });
+    }, 1000)
+    
     body.appendChild(apple);
+}
+
+function chapter2() {
+    // Remove old chapter animation
+    apple.classList.remove("right-position")
+
+    // Apply left position
+    apple.classList.add("left-position")
+    setTimeout(() => {
+        apple.classList.add("left-to-right-position")
+        setTimeout(() => apple.classList.remove("spin"), 4500)
+    }, 1000)
+
 }
 
 /**
