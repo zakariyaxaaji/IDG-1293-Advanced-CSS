@@ -274,6 +274,7 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
 
 
 
+
 // Fade in animation
 @keyframes fadein {
     from { opacity: 0; }
@@ -293,24 +294,64 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
 
 }
 
-.page-1 {
+.page-1 .leaves.small.green {
+    background-color: $color-small-leaves-green;
+}
+
+.page-1 .leaves.medium.green {
+    background-color: $color-medium-leaves-green;
+}
+
+.page-1 .leaves.big.green {
+    background-color: $color-big-leaves-green;
+}
+
+.page-2 .leaves.small.red {
+    background-color: $color-small-leaves-red;
+}
+
+.page-2 .leaves.medium.red {
+    background-color: $color-medium-leaves-red;
+}
+
+.page-2 .leaves.big.red {
+    background-color: $color-big-leaves-red;
+}
+
+.page-2 .leaves.small.white {
+    background-color: $color-small-leaves-white;
+}
+
+.page-2 .leaves.medium.white {
+    background-color: $color-medium-leaves-white;
+}
+
+.page-2 .leaves.big.white {
+    background-color: $color-big-leaves-white;
+}
+
+.page-1 .tree {
 
 }
 
-.page-2 {
+.page-1 .tree {
 
 }
 
-.page-3 {
+.page-2 .tree {
+
+}
+
+.page-3 .tree {
 
 }
 
 .page-4 .rainbow {
     opacity: 1;
-    animation: fadein 2s;
+    animation: fadein 3s;
 }
 
 .page-5 .rainbow {
     opacity: 0;
-    animation: fadeout 2s ;
+    animation: fadeout 3s ;
 }

@@ -148,6 +148,7 @@ function addRainbow() {
 function makeTree(leafColor) {
     const tree = document.createElement("DIV");
     tree.className = "tree";
+    
     setTimeout(function () {
         tree.className = 'tree fadeIn';
     }, 10);
@@ -157,33 +158,18 @@ function makeTree(leafColor) {
     // making leaves for the tree.
     for (i = 0; i < 30; i++) {
         const leaves = document.createElement("DIV");
-        leaves.className = "leaves";
+        leaves.className = "leaves small " + leafColor;
 
         // size will be randomly 5, 10 or 15
         const randomSize = getRandomInt(3);
         let size = 5;
-        if (randomSize === 1) { size = 10; }
-        if (randomSize === 2) { size = 15; }
-
-        // color will be randomly three similar shades of color from param
-        let color = "rgba(255, 255, 255, 0.5)";
-        const randomColor = getRandomInt(3);
-        switch (leafColor) {
-            case 'green':
-                if (randomColor === 0) { color = "rgba(85, 255, 85, 0.788)"; }
-                if (randomColor === 1) { color = "rgba(98, 204, 71, 0.76)"; }
-                if (randomColor === 2) { color = "rgba(21, 65, 11, 0.76)"; }
-                break;
-            case 'red':
-                if (randomColor === 0) { color = "rgb(236, 136, 22, 0.76)"; }
-                if (randomColor === 1) { color = "rgb(236, 90, 22, 0.76)"; }
-                if (randomColor === 2) { color = "rgb(241, 126, 31, 0.76)"; }
-                break;
-            case 'white':
-                if (randomColor === 0) { color = "rgb(255, 255, 255, 0.46)"; }
-                if (randomColor === 1) { color = "rgb(255, 255, 255, 0.56)"; }
-                if (randomColor === 2) { color = "rgb(255, 255, 255, 0.66)"; }
-                break;
+        if (randomSize === 1) {
+            size = 10;
+            leaves.className = "leaves medium " + leafColor;
+        }
+        if (randomSize === 2) {
+            size = 15;
+            leaves.className = "leaves big " + leafColor;
         }
 
 
@@ -198,7 +184,6 @@ function makeTree(leafColor) {
             width: ${size}vmin;
             top: ${bottom}%;
             ${leftOrRight}: ${horizontal}%;
-            background-color: ${color};
         `;
         topTree.appendChild(leaves);
     }
@@ -230,6 +215,7 @@ function makeTree(leafColor) {
 function removeTree(time = 2200, num = 0) {
     let trees = document.getElementsByClassName("tree");
     if (!trees) return
+
     trees[num].className = 'tree fadeOut';
     setTimeout(function () {
         trees[num].remove();

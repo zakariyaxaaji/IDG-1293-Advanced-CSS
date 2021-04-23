@@ -299,15 +299,51 @@ button:hover {
 /**
 * Induvidual styles for each "page". Body class get updated when the button is clicked
 */
+.page-1 .leaves.small.green {
+  background-color: rgba(85, 255, 85, 0.788);
+}
+
+.page-1 .leaves.medium.green {
+  background-color: rgba(98, 204, 71, 0.76);
+}
+
+.page-1 .leaves.big.green {
+  background-color: rgba(21, 65, 11, 0.76);
+}
+
+.page-2 .leaves.small.red {
+  background-color: rgba(236, 136, 22, 0.76);
+}
+
+.page-2 .leaves.medium.red {
+  background-color: rgba(236, 90, 22, 0.76);
+}
+
+.page-2 .leaves.big.red {
+  background-color: rgba(241, 126, 31, 0.76);
+}
+
+.page-2 .leaves.small.white {
+  background-color: rgba(255, 255, 255, 0.46);
+}
+
+.page-2 .leaves.medium.white {
+  background-color: rgba(255, 255, 255, 0.56);
+}
+
+.page-2 .leaves.big.white {
+  background-color: rgba(255, 255, 255, 0.66);
+}
+
 .page-4 .rainbow {
   opacity: 1;
-  -webkit-animation: fadein 2s;
-          animation: fadein 2s;
+  -webkit-animation: fadein 3s;
+          animation: fadein 3s;
 }
 
 .page-5 .rainbow {
   opacity: 0;
-  -webkit-animation: fadeout 2s;
-          animation: fadeout 2s;
+  -webkit-animation: fadeout 3s;
+          animation: fadeout 3s;
 }
 /*# sourceMappingURL=index.css.map */

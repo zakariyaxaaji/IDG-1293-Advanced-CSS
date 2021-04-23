@@ -5,9 +5,6 @@ $color-yellow: rgb(250,255,30);
 $color-lightblue:rgb(30,250,255);
 $color-text-background: rgba(50, 50, 50, 0.4);
 $color-tree-branch: rgb(56, 21, 21);
-$color-leaves-light: rgba(198, 204, 109, 0.788);
-$color-leaves-medium:rgba(151, 185, 112, 0.76);
-$color-leaves-dark: rgba(51, 83, 44, 0.76);
 
 $rainbow-colours:   
   #FF0000, // red
@@ -17,3 +14,16 @@ $rainbow-colours:
   #0000FF, // blue
   #4B0082, // indigo
   #9400D3; // violet
+
+// Leaves color
+$color-small-leaves-green: rgba(85, 255, 85, 0.788);
+$color-medium-leaves-green: rgba(98, 204, 71, 0.76);
+$color-big-leaves-green: rgba(21, 65, 11, 0.76);
+
+$color-small-leaves-red: rgba(236, 136, 22, 0.76);
+$color-medium-leaves-red: rgba(236, 90, 22, 0.76);
+$color-big-leaves-red: rgba(241, 126, 31, 0.76);
+
+$color-small-leaves-white: rgba(255, 255, 255, 0.46);
+$color-medium-leaves-white: rgba(255, 255, 255, 0.56);
+$color-big-leaves-white: rgba(255, 255, 255, 0.66);
