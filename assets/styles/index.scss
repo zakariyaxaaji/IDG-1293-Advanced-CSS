@@ -238,16 +238,7 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
         ) * ($i - 1)
       )
     );
-
-    // End of band (only use this for type == band)
-    @if($type == "bands") {
-      $rainbow-gradient: append(
-        $rainbow-gradient,
-        $colour $rainbow-radius - ($rainbow-thickness - $colour-band-width * $i)
-      );
-    }
   }
-  
   background: radial-gradient($rainbow-gradient);
 }
 
@@ -274,32 +265,26 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
     width: 50vmin;
     width: $rainbow-diameter;
     height: $rainbow-radius;
+    opacity: 0;
+
 
   // Rainbow classes
-  &.bands { @include rainbow("bands"); }
   &.smooth { @include rainbow("smooth"); }
-  
-  // Animation element
-  &::after {
-    content: '';
-    position: absolute;
-    transform-origin: $rainbow-radius $rainbow-radius;
-    width: $rainbow-diameter;
-    height: $rainbow-radius;
-    background-color: $background-colour;
-    animation: wipe $animation-duration ease-in-out infinite;
-  }
 }
 
-// Wipe animation
-@keyframes wipe {
-  0% { transform: rotate(0deg); }
-  20% { transform: rotate(180deg); }
-  70% { transform: rotate(180deg); }
-  90% { transform: rotate(360deg); }
-  100% { transform: rotate(360deg); }
+
+
+// Fade in animation
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
+// Fade out animation
+@keyframes fadeout {
+    from { opacity: 1;}
+    to   { opacity: 0;}
+}
 
 /**
 * Induvidual styles for each "page". Body class get updated when the button is clicked
@@ -320,10 +305,12 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
 
 }
 
-.page-4 {
-
+.page-4 .rainbow {
+    opacity: 1;
+    animation: fadein 2s;
 }
 
-.page-5 {
-
+.page-5 .rainbow {
+    opacity: 0;
+    animation: fadeout 2s ;
 }

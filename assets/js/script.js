@@ -2,7 +2,6 @@ const body = document.body;
 const continueButton = document.getElementById("continue-button");
 const poemText = document.getElementById("container__poem");
 const apple = document.createElement("IMG");
-const rainbow = document.createElement("FIGURE");
 
 let pageNumber = 0;
 let gradPos = 100; // Gradient position used to move the background of the page
@@ -10,6 +9,7 @@ let isTreeWhite = false;
 
 
 resetPage(); //Reset page gets called in the beginning to create the front page (page 0)
+addRainbow(); // Add rainbow to HTML document. (Will not show as opacity is set to 0)
 
 /**
  * Eventlistener on the continue/start/reset button that is displayed.
@@ -75,10 +75,8 @@ function updatePage() {
             removeTree();
             break;
         case 4:
-            addRainbow();
             break;
         case 5:
-            removeRainbow();
             continueButton.innerHTML = "Reset";
             break;
     }
@@ -137,12 +135,9 @@ function chapter2() {
 }
 
 function addRainbow() {
+    const rainbow = document.createElement("FIGURE");
     rainbow.className = "rainbow smooth";
     body.appendChild(rainbow);
-}
-
-function removeRainbow() {
-    body.removeChild(rainbow);
 }
 
 /**

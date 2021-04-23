@@ -245,18 +245,7 @@ button:hover {
   width: 50vmin;
   width: 600px;
   height: 300px;
-}
-
-.rainbow.bands::before {
-  content: '';
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  -webkit-filter: hue-rotate(-15deg) contrast(95%);
-          filter: hue-rotate(-15deg) contrast(95%);
-  opacity: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, transparent, transparent 240px, #9400D3 240px, #9400D3 240px, #9400D3 248.57143px, #4B0082 248.57143px, #4B0082 257.14286px, #0000FF 257.14286px, #0000FF 265.71429px, #00FF00 265.71429px, #00FF00 274.28571px, #FFFF00 274.28571px, #FFFF00 282.85714px, #FF7F00 282.85714px, #FF7F00 291.42857px, #FF0000 291.42857px, #FF0000 300px);
+  opacity: 0;
 }
 
 .rainbow.smooth::before {
@@ -271,65 +260,54 @@ button:hover {
   background: radial-gradient(circle at center, transparent, transparent 240px, #9400D3 240px, #9400D3 240px, #4B0082 249.79592px, #0000FF 259.59184px, #00FF00 269.38776px, #FFFF00 279.18367px, #FF7F00 288.97959px, #FF0000 298.77551px);
 }
 
-.rainbow::after {
-  content: '';
-  position: absolute;
-  -webkit-transform-origin: 300px 300px;
-          transform-origin: 300px 300px;
-  width: 600px;
-  height: 300px;
-  background-color: #ff000000;
-  -webkit-animation: wipe 6s ease-in-out infinite;
-          animation: wipe 6s ease-in-out infinite;
-}
-
-@-webkit-keyframes wipe {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
   }
-  20% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-  70% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-  90% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+  to {
+    opacity: 1;
   }
 }
 
-@keyframes wipe {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+@keyframes fadein {
+  from {
+    opacity: 0;
   }
-  20% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+  to {
+    opacity: 1;
   }
-  70% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1;
   }
-  90% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+  to {
+    opacity: 0;
   }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 
 /**
 * Induvidual styles for each "page". Body class get updated when the button is clicked
 */
+.page-4 .rainbow {
+  opacity: 1;
+  -webkit-animation: fadein 2s;
+          animation: fadein 2s;
+}
+
+.page-5 .rainbow {
+  opacity: 0;
+  -webkit-animation: fadeout 2s;
+          animation: fadeout 2s;
+}
 /*# sourceMappingURL=index.css.map */
