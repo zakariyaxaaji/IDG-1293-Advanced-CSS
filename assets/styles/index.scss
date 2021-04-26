@@ -271,8 +271,83 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
   // Rainbow classes
   &.smooth { @include rainbow("smooth"); }
 }
+.clouds{
+    display: none;
+}
+#cloud1{
+            animation: bobble 2s infinite;
+            margin-left: 100px;
+            margin-top: 15px;
+        }
 
 
+        @keyframes bobble {
+                    0% {
+                        transform: translate3d(50px, 40px, 0px);
+                        animation-timing-function: ease-in;
+                    }
+
+                    50% {
+                        transform: translate3d(50px, 60px, 0px);
+                        animation-timing-function: ease-out;
+                    }
+
+                    100% {
+                        transform: translate3d(50px, 40px, 0px);
+                    }
+
+        }
+
+        #cloud2{
+            animation: bobble 1.5s infinite;
+            margin-left: 100px;
+            margin-top: 15px;
+        }
+
+
+        @keyframes bobble {
+                    0% {
+                        transform: translate3d(50px, 40px, 0px);
+                        animation-timing-function: ease-in;
+                    }
+
+                    50% {
+                        transform: translate3d(50px, 60px, 0px);
+                        animation-timing-function: ease-out;
+                    }
+
+                    100% {
+                        transform: translate3d(50px, 40px, 0px);
+                    }
+
+        }
+
+        #cloud3{
+            animation: bobble 3s infinite;
+            margin-left: 100px;
+            margin-top: 15px;
+        }
+
+
+        @keyframes bobble {
+                    0% {
+                        transform: translate3d(50px, 40px, 0px);
+                        animation-timing-function: ease-in;
+                    }
+
+                    50% {
+                        transform: translate3d(50px, 60px, 0px);
+                        animation-timing-function: ease-out;
+                    }
+
+                    100% {
+                        transform: translate3d(50px, 40px, 0px);
+                    }
+
+        }
+    .hands{
+        display: none;
+    }
 
 
 // Fade in animation
@@ -342,16 +417,40 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
 
 }
 
-.page-3 .tree {
-
+.page-3 .clouds{
+    display: block;
+    opacity: 1;
+    animation: fadein 3s;
+    position: absolute;
+    top:-10%;
+    left:17%;
 }
 
-.page-4 .rainbow {
+.page-4 .clouds{
+    display: none;
+    opacity: 0;
+    animation: fadeout 3s ;
+}
+.page-4 .hands{
+    display:block ;
+    position: absolute;
+    top: 13%;
+    left: 70%;
+    animation: fadein 3s;
+
+}
+.page-5 .hands{
+    display: none;
+}
+.page-5 .rainbow {
     opacity: 1;
     animation: fadein 3s;
 }
 
 .page-5 .rainbow {
+    
+}
+.page-0 .rainbow {
     opacity: 0;
     animation: fadeout 3s ;
 }

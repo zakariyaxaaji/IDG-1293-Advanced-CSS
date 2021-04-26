@@ -260,6 +260,111 @@ button:hover {
   background: radial-gradient(circle at center, transparent, transparent 240px, #9400D3 240px, #9400D3 240px, #4B0082 249.79592px, #0000FF 259.59184px, #00FF00 269.38776px, #FFFF00 279.18367px, #FF7F00 288.97959px, #FF0000 298.77551px);
 }
 
+.clouds {
+  display: none;
+}
+
+#cloud1 {
+  -webkit-animation: bobble 2s infinite;
+          animation: bobble 2s infinite;
+  margin-left: 100px;
+  margin-top: 15px;
+}
+
+@-webkit-keyframes bobble {
+  0% {
+    -webkit-transform: translate3d(50px, 40px, 0px);
+            transform: translate3d(50px, 40px, 0px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  50% {
+    -webkit-transform: translate3d(50px, 60px, 0px);
+            transform: translate3d(50px, 60px, 0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translate3d(50px, 40px, 0px);
+            transform: translate3d(50px, 40px, 0px);
+  }
+}
+
+@keyframes bobble {
+  0% {
+    -webkit-transform: translate3d(50px, 40px, 0px);
+            transform: translate3d(50px, 40px, 0px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  50% {
+    -webkit-transform: translate3d(50px, 60px, 0px);
+            transform: translate3d(50px, 60px, 0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translate3d(50px, 40px, 0px);
+            transform: translate3d(50px, 40px, 0px);
+  }
+}
+
+#cloud2 {
+  -webkit-animation: bobble 1.5s infinite;
+          animation: bobble 1.5s infinite;
+  margin-left: 100px;
+  margin-top: 15px;
+}
+
+@keyframes bobble {
+  0% {
+    -webkit-transform: translate3d(50px, 40px, 0px);
+            transform: translate3d(50px, 40px, 0px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  50% {
+    -webkit-transform: translate3d(50px, 60px, 0px);
+            transform: translate3d(50px, 60px, 0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translate3d(50px, 40px, 0px);
+            transform: translate3d(50px, 40px, 0px);
+  }
+}
+
+#cloud3 {
+  -webkit-animation: bobble 3s infinite;
+          animation: bobble 3s infinite;
+  margin-left: 100px;
+  margin-top: 15px;
+}
+
+@keyframes bobble {
+  0% {
+    -webkit-transform: translate3d(50px, 40px, 0px);
+            transform: translate3d(50px, 40px, 0px);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  50% {
+    -webkit-transform: translate3d(50px, 60px, 0px);
+            transform: translate3d(50px, 60px, 0px);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  100% {
+    -webkit-transform: translate3d(50px, 40px, 0px);
+            transform: translate3d(50px, 40px, 0px);
+  }
+}
+
+.hands {
+  display: none;
+}
+
 @-webkit-keyframes fadein {
   from {
     opacity: 0;
@@ -335,13 +440,43 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.66);
 }
 
-.page-4 .rainbow {
+.page-3 .clouds {
+  display: block;
+  opacity: 1;
+  -webkit-animation: fadein 3s;
+          animation: fadein 3s;
+  position: absolute;
+  top: -10%;
+  left: 17%;
+}
+
+.page-4 .clouds {
+  display: none;
+  opacity: 0;
+  -webkit-animation: fadeout 3s;
+          animation: fadeout 3s;
+}
+
+.page-4 .hands {
+  display: block;
+  position: absolute;
+  top: 13%;
+  left: 70%;
+  -webkit-animation: fadein 3s;
+          animation: fadein 3s;
+}
+
+.page-5 .hands {
+  display: none;
+}
+
+.page-5 .rainbow {
   opacity: 1;
   -webkit-animation: fadein 3s;
           animation: fadein 3s;
 }
 
-.page-5 .rainbow {
+.page-0 .rainbow {
   opacity: 0;
   -webkit-animation: fadeout 3s;
           animation: fadeout 3s;
