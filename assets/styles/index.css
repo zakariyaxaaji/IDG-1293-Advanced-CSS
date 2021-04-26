@@ -260,6 +260,18 @@ button:hover {
   background: radial-gradient(circle at center, transparent, transparent 240px, #9400D3 240px, #9400D3 240px, #4B0082 249.79592px, #0000FF 259.59184px, #00FF00 269.38776px, #FFFF00 279.18367px, #FF7F00 288.97959px, #FF0000 298.77551px);
 }
 
+#cloud1 {
+  height: 200px;
+}
+
+#cloud2 {
+  height: 150;
+}
+
+#cloud3 {
+  height: 175;
+}
+
 .clouds {
   display: none;
 }

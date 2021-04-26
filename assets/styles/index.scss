@@ -271,9 +271,21 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
   // Rainbow classes
   &.smooth { @include rainbow("smooth"); }
 }
+#cloud1{
+    height:200px;
+}
+#cloud2{
+    height:150;
+}
+#cloud3{
+    height:175;
+}
+
+//start by making the clouds inviciable 
 .clouds{
     display: none;
 }
+// animate the clouds so that they bounce 
 #cloud1{
             animation: bobble 2s infinite;
             margin-left: 100px;
