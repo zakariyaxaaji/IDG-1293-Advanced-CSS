@@ -1,7 +1,6 @@
 @import "_colors.scss";
 @import "_fonts.scss";
 @import "_layout.scss";
-@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
 
 * {
     margin: 0;
@@ -21,7 +20,7 @@ body {
     background-size: 2000%;
     background-position: 100%;
     transition: all 3s;
-    font-family: "New Tegomin", serif;
+    font-family: $fontNewTegomin;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -50,7 +49,7 @@ button {
     background: $color-text-background;
     border: 2px solid white;
     border-radius: 0.2em;
-    font-family: "New Tegomin", serif;
+    font-family: $fontNewTegomin;
     font-size: 1.7em;
     transition: all 0.8s;
     margin: 1em;
@@ -64,18 +63,6 @@ button {
     }
 }
 
-/**
-* Style for tree
-*/
-.tree {
-    position: absolute;
-    right: 0;
-    bottom: 0px;
-    height: 50vmin;
-    width: 50vmin;
-    opacity: 0;
-    transition: opacity 2.2s;
-}
 .para {
     opacity: 0;
     transition: opacity 2.2s;
@@ -88,6 +75,21 @@ button {
 .fadeOut {
     opacity: 0;
 }
+
+
+/**
+* Style for tree
+*/
+.tree {
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    height: $tree-height-width;
+    width: $tree-height-width;
+    opacity: 0;
+    transition: opacity 2.2s;
+}
+
 .trunk {
     z-index: -1;
     position: absolute;
@@ -98,16 +100,16 @@ button {
     margin-right: auto;
     border-style: none;
     background-color: $color-tree-branch;
-    height: 50vmin;
-    width: 5vmin;
+    height: $tree-height-width;
+    width: $trunk-height;
     border-radius: 63% 37% 31% 69% / 60% 74% 26% 40%;
 }
 
 .branch {
     position: relative;
     background-color: $color-tree-branch;
-    height: 19vmin;
-    width: 2vmin;
+    height: $branch-height;
+    width: $branch-width;
     top: 2%;
     right: -120%;
     transform: rotate(+30deg);
@@ -261,8 +263,6 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
     position: absolute;
     left: 65%;
     bottom: 0px;
-    height: 50vmin;
-    width: 50vmin;
     width: $rainbow-diameter;
     height: $rainbow-radius;
     opacity: 0;
@@ -365,8 +365,8 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
 /**
 * Induvidual styles for each "page". Body class get updated when the button is clicked
 */
-.page-0 {
-
+.page-0 .rainbow {
+    opacity: 0;
 }
 
 .page-1 .leaves.small.green {
@@ -405,18 +405,6 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
     background-color: $color-big-leaves-white;
 }
 
-.page-1 .tree {
-
-}
-
-.page-1 .tree {
-
-}
-
-.page-2 .tree {
-
-}
-
 .page-3 .clouds{
     display: block;
     opacity: 1;
@@ -429,8 +417,9 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
 .page-4 .clouds{
     display: none;
     opacity: 0;
-    animation: fadeout 3s ;
+    animation: fadeout 3s;
 }
+
 .page-4 .hands{
     display:block ;
     position: absolute;
@@ -439,18 +428,12 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
     animation: fadein 3s;
 
 }
+
 .page-5 .hands{
     display: none;
 }
+
 .page-5 .rainbow {
     opacity: 1;
     animation: fadein 3s;
-}
-
-.page-5 .rainbow {
-    
-}
-.page-0 .rainbow {
-    opacity: 0;
-    animation: fadeout 3s ;
 }

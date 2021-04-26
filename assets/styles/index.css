@@ -58,20 +58,6 @@ button:hover {
   color: #02ddd7;
 }
 
-/**
-* Style for tree
-*/
-.tree {
-  position: absolute;
-  right: 0;
-  bottom: 0px;
-  height: 50vmin;
-  width: 50vmin;
-  opacity: 0;
-  -webkit-transition: opacity 2.2s;
-  transition: opacity 2.2s;
-}
-
 .para {
   opacity: 0;
   -webkit-transition: opacity 2.2s;
@@ -88,6 +74,20 @@ button:hover {
 
 .fadeOut {
   opacity: 0;
+}
+
+/**
+* Style for tree
+*/
+.tree {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  height: 50vmin;
+  width: 50vmin;
+  opacity: 0;
+  -webkit-transition: opacity 2.2s;
+  transition: opacity 2.2s;
 }
 
 .trunk {
@@ -241,8 +241,6 @@ button:hover {
   position: absolute;
   left: 65%;
   bottom: 0px;
-  height: 50vmin;
-  width: 50vmin;
   width: 600px;
   height: 300px;
   opacity: 0;
@@ -404,6 +402,10 @@ button:hover {
 /**
 * Induvidual styles for each "page". Body class get updated when the button is clicked
 */
+.page-0 .rainbow {
+  opacity: 0;
+}
+
 .page-1 .leaves.small.green {
   background-color: rgba(85, 255, 85, 0.788);
 }
@@ -474,11 +476,5 @@ button:hover {
   opacity: 1;
   -webkit-animation: fadein 3s;
           animation: fadein 3s;
-}
-
-.page-0 .rainbow {
-  opacity: 0;
-  -webkit-animation: fadeout 3s;
-          animation: fadeout 3s;
 }
 /*# sourceMappingURL=index.css.map */
