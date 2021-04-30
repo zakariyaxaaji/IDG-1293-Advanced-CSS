@@ -72,11 +72,14 @@ function updatePage() {
             makeTree('red');
             break;
         case 3:
+            chapter3();
             removeTree();
             break;
         case 4:
+            chapter4();
             break;
         case 5:
+            removeApple();
             continueButton.innerHTML = "Reset";
             break;
     }
@@ -131,7 +134,57 @@ function chapter2() {
         apple.classList.add("left-to-right-position")
         setTimeout(() => apple.classList.remove("spin"), 4500)
     }, 1000)
+}
 
+function chapter3() {
+    // Remove old chapter animation
+    apple.classList.remove("left-position")
+    apple.classList.remove("left-to-right-position")
+
+    // Moves apple out of screen
+    apple.classList.add("right-to-off-position")
+    apple.classList.add("spin")
+
+    // Apply left position
+    setTimeout(() => {
+        apple.classList.remove("right-to-off-position")
+        
+        apple.classList.add("left-position")
+        setTimeout(() => {
+            apple.classList.add("left-to-right-position")
+            setTimeout(() => {
+                apple.classList.remove("spin")
+            }, 4500)
+        }, 100)
+    }, 1000)
+
+}
+
+function chapter4() {
+    // Remove old chapter animation
+    apple.classList.remove("left-to-right-position")
+
+     // Moves apple out of screen
+    apple.classList.add("right-to-off-position")
+    apple.classList.add("spin")
+
+    // Apply left position
+    setTimeout(() => {
+        apple.classList.remove("right-to-off-position")
+        
+        apple.classList.add("left-position")
+        setTimeout(() => {
+            apple.classList.add("left-to-right-position")
+            setTimeout(() => {
+                apple.classList.remove("spin")
+            }, 4500)
+        }, 100)
+    }, 1000)
+}
+
+function removeApple() {
+    // Remove apple animation
+    apple.classList.remove("apple")
 }
 
 function addRainbow() {
