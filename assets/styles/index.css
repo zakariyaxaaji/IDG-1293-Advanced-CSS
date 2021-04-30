@@ -85,7 +85,6 @@ button:hover {
   bottom: 0px;
   height: 50vmin;
   width: 50vmin;
-  opacity: 0;
   -webkit-transition: opacity 2.2s;
   transition: opacity 2.2s;
 }
