@@ -286,7 +286,7 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
 }
 
 //start by making the clouds inviciable 
-.clouds{
+.container__clouds{
     display: none;
 }
 // animate the clouds so that they bounce 
@@ -361,7 +361,7 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
                     }
 
         }
-    .hands{
+    .container__hands{
         display: none;
     }
 
@@ -421,7 +421,7 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
     background-color: $color-big-leaves-white;
 }
 
-.page-3 .clouds{
+.page-3 .container__clouds{
     display: block;
     opacity: 1;
     animation: fadein 3s;
@@ -430,13 +430,13 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
     left:17%;
 }
 
-.page-4 .clouds{
+.page-4 .container__clouds{
     display: none;
     opacity: 0;
     animation: fadeout 3s;
 }
 
-.page-4 .hands{
+.page-4 .container__hands{
     display:block ;
     position: absolute;
     top: 13%;
@@ -445,7 +445,7 @@ $colour-band-width: $rainbow-thickness / length($rainbow-colours);
 
 }
 
-.page-5 .hands{
+.page-5 .container__hands{
     display: none;
 }
 

@@ -275,7 +275,7 @@ button:hover {
   height: 175;
 }
 
-.clouds {
+.container__clouds {
   display: none;
 }
 
@@ -376,7 +376,7 @@ button:hover {
   }
 }
 
-.hands {
+.container__hands {
   display: none;
 }
 
@@ -459,7 +459,7 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.66);
 }
 
-.page-3 .clouds {
+.page-3 .container__clouds {
   display: block;
   opacity: 1;
   -webkit-animation: fadein 3s;
@@ -469,14 +469,14 @@ button:hover {
   left: 17%;
 }
 
-.page-4 .clouds {
+.page-4 .container__clouds {
   display: none;
   opacity: 0;
   -webkit-animation: fadeout 3s;
           animation: fadeout 3s;
 }
 
-.page-4 .hands {
+.page-4 .container__hands {
   display: block;
   position: absolute;
   top: 13%;
@@ -485,7 +485,7 @@ button:hover {
           animation: fadein 3s;
 }
 
-.page-5 .hands {
+.page-5 .container__hands {
   display: none;
 }
 
