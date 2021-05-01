@@ -204,17 +204,6 @@ button {
     }
 }
 
-/* Rainbow Variables */
-$animation-duration: 6s;
-$background-colour: #ff000000;
-$rainbow-filter: hue-rotate(-15deg) contrast(95%);
-$rainbow-opacity: 1;
-
-
-/* Leave these alone */
-$rainbow-radius: $rainbow-diameter / 2;
-$colour-band-width: $rainbow-thickness / length($rainbow-colours);
-
 // Generate a rainbow gradient
 @mixin rainbowGradient($type) {
   

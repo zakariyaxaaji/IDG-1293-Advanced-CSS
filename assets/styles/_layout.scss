@@ -1,6 +1,10 @@
 // Rainbow
 $rainbow-diameter: 600px;
 $rainbow-thickness: 60px;
+$rainbow-filter: hue-rotate(-15deg) contrast(95%);
+$rainbow-opacity: 1;
+$rainbow-radius: $rainbow-diameter / 2;
+$colour-band-width: $rainbow-thickness / length($rainbow-colours);
 // Tree
 $tree-height-width: 50vmin;
 $trunk-height: 5vmin;
