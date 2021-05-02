@@ -13,7 +13,7 @@ body {
         $color-blue 0%,
         $color-yellow 25%,
         $color-orange 45%,
-        rgb(255, 94, 0) 55%,
+        $color-darkOrange 55%,
         $color-green 75%,
         $color-lightblue 100%
     );
@@ -75,7 +75,6 @@ button {
 .fadeOut {
     opacity: 0;
 }
-
 
 /**
 * Style for tree
@@ -178,7 +177,7 @@ button {
 }
 
 .right-to-off-position {
-    transition: all 1.0s ease-out;
+    transition: all 1s ease-out;
     left: 100vw;
 }
 
@@ -206,49 +205,49 @@ button {
 
 // Generate a rainbow gradient
 @mixin rainbowGradient($type) {
-  
-  // Base gradient
-  $rainbow-gradient: 
-    circle at center,
-    transparent,
-    transparent $rainbow-radius - $rainbow-thickness,
-    nth($rainbow-colours, -1) $rainbow-radius - $rainbow-thickness;
-  
-  // Generate banded or smooth radial gradient
-  @for $i from 1 through length($rainbow-colours) {
-    
-    // Next colour
-    $colour: nth($rainbow-colours, -$i);
-    
-    // Start of band
-    $rainbow-gradient: append(
-      $rainbow-gradient,
-      $colour $rainbow-radius - ($rainbow-thickness - 
-        if(
-          $type == "smooth",
-          // Smooth: Offset the band start by half a band for better blending
-          $colour-band-width + ($colour-band-width / (length($rainbow-colours))),
-          // Bands: Do not offset the band
-          $colour-band-width
-        ) * ($i - 1)
-      )
-    );
-  }
-  background: radial-gradient($rainbow-gradient);
+    // Base gradient
+    $rainbow-gradient: circle at center, transparent, transparent $rainbow-radius - $rainbow-thickness,
+        nth($rainbow-colours, -1) $rainbow-radius - $rainbow-thickness;
+
+    // Generate banded or smooth radial gradient
+    @for $i from 1 through length($rainbow-colours) {
+        // Next colour
+        $colour: nth($rainbow-colours, -$i);
+
+        // Start of band
+        $rainbow-gradient: append(
+            $rainbow-gradient,
+            $colour
+                $rainbow-radius -
+                (
+                    $rainbow-thickness -
+                        if(
+                            $type == "smooth",
+                            // Smooth: Offset the band start by half a band for better blending
+                            $colour-band-width +
+                                ($colour-band-width / (length($rainbow-colours))),
+                            // Bands: Do not offset the band
+                            $colour-band-width
+                        ) *
+                        ($i - 1)
+                )
+        );
+    }
+    background: radial-gradient($rainbow-gradient);
 }
 
 // the rainbow element
 @mixin rainbow($type) {
-  &::before {
-    content: '';
-    position: absolute;
-    width: $rainbow-diameter;
-    height: $rainbow-diameter;
-    filter: $rainbow-filter;
-    opacity: $rainbow-opacity;
-    border-radius: 50%;
-    @include rainbowGradient($type);
-  }
+    &::before {
+        content: "";
+        position: absolute;
+        width: $rainbow-diameter;
+        height: $rainbow-diameter;
+        filter: $rainbow-filter;
+        opacity: $rainbow-opacity;
+        border-radius: 50%;
+        @include rainbowGradient($type);
+    }
 }
 
 // Rainbow container
@@ -260,111 +259,82 @@ button {
     height: $rainbow-radius;
     opacity: 0;
 
+    // Rainbow classes
+    &.smooth {
+        @include rainbow("smooth");
+    }
+}
+#cloud1 {
+    height: 200px;
+}
+#cloud2 {
+    height: 150;
+}
+#cloud3 {
+    height: 175;
+}
 
-  // Rainbow classes
-  &.smooth { @include rainbow("smooth"); }
-}
-#cloud1{
-    height:200px;
-}
-#cloud2{
-    height:150;
-}
-#cloud3{
-    height:175;
-}
-
-//start by making the clouds inviciable 
-.container__clouds{
+//start by making the clouds inviciable
+.container__clouds {
     display: none;
 }
-// animate the clouds so that they bounce 
-#cloud1{
-            animation: bobble 2s infinite;
-            margin-left: 100px;
-            margin-top: 15px;
-        }
+// animate the clouds so that they bounce
 
-
-        @keyframes bobble {
-                    0% {
-                        transform: translate3d(50px, 40px, 0px);
-                        animation-timing-function: ease-in;
-                    }
-
-                    50% {
-                        transform: translate3d(50px, 60px, 0px);
-                        animation-timing-function: ease-out;
-                    }
-
-                    100% {
-                        transform: translate3d(50px, 40px, 0px);
-                    }
-
-        }
-
-        #cloud2{
-            animation: bobble 1.5s infinite;
-            margin-left: 100px;
-            margin-top: 15px;
-        }
-
-
-        @keyframes bobble {
-                    0% {
-                        transform: translate3d(50px, 40px, 0px);
-                        animation-timing-function: ease-in;
-                    }
-
-                    50% {
-                        transform: translate3d(50px, 60px, 0px);
-                        animation-timing-function: ease-out;
-                    }
-
-                    100% {
-                        transform: translate3d(50px, 40px, 0px);
-                    }
-
-        }
-
-        #cloud3{
-            animation: bobble 3s infinite;
-            margin-left: 100px;
-            margin-top: 15px;
-        }
-
-
-        @keyframes bobble {
-                    0% {
-                        transform: translate3d(50px, 40px, 0px);
-                        animation-timing-function: ease-in;
-                    }
-
-                    50% {
-                        transform: translate3d(50px, 60px, 0px);
-                        animation-timing-function: ease-out;
-                    }
-
-                    100% {
-                        transform: translate3d(50px, 40px, 0px);
-                    }
-
-        }
-    .container__hands{
-        display: none;
+@keyframes bobble {
+    0% {
+        transform: translate3d(50px, 40px, 0px);
+        animation-timing-function: ease-in;
     }
 
+    50% {
+        transform: translate3d(50px, 60px, 0px);
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        transform: translate3d(50px, 40px, 0px);
+    }
+}
+#cloud1 {
+    animation: bobble 2s infinite;
+    margin-left: 100px;
+    margin-top: 15px;
+}
+
+#cloud2 {
+    animation: bobble 1.5s infinite;
+    margin-left: 100px;
+    margin-top: 15px;
+}
+
+#cloud3 {
+    animation: bobble 3s infinite;
+    margin-left: 100px;
+    margin-top: 15px;
+}
+
+.container__hands {
+    display: none;
+}
 
 // Fade in animation
 @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 // Fade out animation
 @keyframes fadeout {
-    from { opacity: 1;}
-    to   { opacity: 0;}
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 /**
@@ -410,31 +380,30 @@ button {
     background-color: $color-big-leaves-white;
 }
 
-.page-3 .container__clouds{
+.page-3 .container__clouds {
     display: block;
     opacity: 1;
     animation: fadein 3s;
     position: absolute;
-    top:-10%;
-    left:17%;
+    top: -10%;
+    left: 17%;
 }
 
-.page-4 .container__clouds{
+.page-4 .container__clouds {
     display: none;
     opacity: 0;
     animation: fadeout 3s;
 }
 
-.page-4 .container__hands{
-    display:block ;
+.page-4 .container__hands {
+    display: block;
     position: absolute;
     top: 13%;
     left: 70%;
     animation: fadein 3s;
-
 }
 
-.page-5 .container__hands{
+.page-5 .container__hands {
     display: none;
 }
 
