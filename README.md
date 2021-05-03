@@ -1,6 +1,9 @@
 # IDG-1293-Advanced-CSS
 This github repository holds all our files for the IDG 1293 Advanced CSS Project 
 
+- Github repo link: https://github.com/zakariyaxaaji/zakariyaxaaji.github.io
+- Github pages link: https://zakariyaxaaji.github.io/
+
 ## Group members
 * [Zakariya](https://github.com/zakariyaxaaji)
 * [Thomas](https://github.com/thomaslian)
